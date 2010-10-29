@@ -1,0 +1,6 @@
+build/*
+*.xcodeproj
+*.anjuta
+Makefile.am
+configure.ac
+autogen.sh
