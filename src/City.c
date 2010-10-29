@@ -10,4 +10,22 @@
 #include "City.h"
 
 
-cityCreate(char* cityName);
+pCity cityCreate(char* name){
+	pCity tmpCity = malloc(sizeof(City));
+	
+	tmpCity->name = malloc(sizeof(char) * strlen(name));
+	
+	strcpy(tmpCity->name, name);
+	tmpCity->branch = NULL; // Ne pointe vers rien
+	
+	return tmpCity;
+}
+	
+void cityDestroy(pCity city){
+	
+	free(city->name);
+	
+	//TODO Parcourir l'arbre et désalloué
+	
+	free(city);
+}
