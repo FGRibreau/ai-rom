@@ -9,15 +9,15 @@
 
 #include "Noeud.h"
 
-typedef struct Noeud* Arbre;
-typedef struct cell* list;
+typedef struct City* pCity;
+typedef struct BranchNode* pBranchNode;
 
-struct cell{
-	Arbre son;
-	list next;
+struct BranchNode{
+	pCity city;			/* Pointeur sur City */
+	unsigned int dist;	/* Distance */
 };
 
-struct Noeud{
-    char nomVille[250];
-	list fils; // 1 ou plusieurs fils
+struct City{
+    char cityName[250];
+	pBranchNode branch; /**/ 
 };
