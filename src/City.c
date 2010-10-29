@@ -1,5 +1,5 @@
 /*
- *  plan.h
+ *  plan.c
  *  TP1
  *
  *  Created by Francois-Guillaume Ribreau on 22/10/10.
@@ -7,3 +7,7 @@
  *
  */
 
+#include "City.h"
+
+
+cityCreate(char* cityName);
