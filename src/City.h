@@ -22,9 +22,24 @@ struct BranchNode{
 struct City{
     char* name;
 	pBranchNode branch; /*
-	branchAdd(pCity city, unsigned int dist);
+	void City_branchLink(pCity cityA, pCity cityB, unsigned int dist);
+	bool City_branchIsEmpty(pCity);
 */
 } City;
+
+/*
+ 
+ CityFG --- *BranchNode1 -> CityPhilou
+ CityFG <-- *BranchNode2 -- CityPhilou
+ CityFG --- *BranchNode3 -> CityBricaud
+ CityFG <-- *BranchNode4 -- CityBricaud
+ 
+ 
+ CityFG
+	name: "FG"
+	branch: *BranchNode1(CityPhilou) :next *BrancheNode3(CityBricaud)
+ 
+ */
 
 /* Methodes */
 pCity cityCreate(char* name);

@@ -8,7 +8,7 @@ int main (int argc, const char * argv[]) {
 	pCity Zerind = cityCreate("Zerind");
 	pCity Oradea = cityCreate("Oradea");
 	pCity Siblu = cityCreate("Siblu");
-	pCity Timisoara = cityCreate("Timisoara");-
+	pCity Timisoara = cityCreate("Timisoara");
 	pCity Lugoj = cityCreate("Lugoj");
 	pCity Mehadia = cityCreate("Mehadia");
 	pCity Dobreta = cityCreate("Dobreta");
@@ -17,9 +17,17 @@ int main (int argc, const char * argv[]) {
 	pCity Fagaras = cityCreate("Fagaras");
 	pCity Bucarest = cityCreate("Bucarest");
 	/*-------------------------------------*/
+
+	city_branchLink(Arad, Zerind, 75);
+	city_branchLink(Arad, Siblu, 140);
+	city_branchLink(Arad, Timisoara, 118);
 	
+	
+	
+	printf("Hello %s \n", Arad->name);
 	/*--------------DESTRUCTION------------*/
-		
+	
+	cityDestroy(Arad);
 	
 	return 0;
 }
