@@ -10,37 +10,47 @@
 #include <string.h>
 #include <stdlib.h>
 
-typedef struct City* pCity;
-typedef struct BranchNode* pBranchNode;
+#ifndef _CITY_h
+#define _CITY_h
 
-struct BranchNode{
-	pCity city;			/* Pointeur sur City */
-	unsigned int dist;	/* Distance */
-	/* Ajouter le next */
-} BranchNode;
+typedef enum{false,true}bool;
+
+typedef struct City* pCity;
+typedef struct Branch* pBranch;
+
+struct Branch{
+	pCity city;				/* Pointeur sur City */
+	unsigned int dist;		/* Distance */
+	pBranch next;			/* Next */
+} Branch;
 
 struct City{
-    char* name;
-	pBranchNode branch; /*
-	void City_branchLink(pCity cityA, pCity cityB, unsigned int dist);
-	bool City_branchIsEmpty(pCity);
+    char*		name;
+	pBranch branch; 
+/*
+	pCity		City_create();
+	void		City_destroy();
+	void		City_branchLink(pCity cityA, pCity cityB, unsigned int dist);
+	bool		City_branchAdd(pCity city, pBranch branch);
+	bool		City_branchIsEmpty(pCity);
+	bool		City_branchExist(pCity city, pCity cityInner);
+ 
+	pBranch		branch_walkToCity(pBranch branch, pCity city);
+	pBranch		branch_walkToEnd(pBranch branch);
 */
 } City;
 
-/*
- 
- CityFG --- *BranchNode1 -> CityPhilou
- CityFG <-- *BranchNode2 -- CityPhilou
- CityFG --- *BranchNode3 -> CityBricaud
- CityFG <-- *BranchNode4 -- CityBricaud
- 
- 
- CityFG
-	name: "FG"
-	branch: *BranchNode1(CityPhilou) :next *BrancheNode3(CityBricaud)
- 
- */
 
-/* Methodes */
-pCity cityCreate(char* name);
-void cityDestroy(pCity city);
+/* Methodes City */
+pCity	City_create(char* name);
+void	City_destroy();
+bool	City_branchLink(pCity cityA, pCity cityB, unsigned int dist);
+bool	City_branchAdd(pCity city, pBranch branch);
+bool	City_branchExist(pCity city, pCity cityInner);
+
+/* Méthodes Branch */
+pBranch branch_walkToCity(pBranch branch, pCity city);
+pBranch branch_walkToEnd(pBranch branch);
+
+
+#endif
