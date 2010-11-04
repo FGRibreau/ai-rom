@@ -40,6 +40,11 @@ bool City_branchLink(pCity cityA, pCity cityB, unsigned int dist){
 	pBranch Branch1 = malloc(sizeof(Branch))	//CityA.branch
 	,		Branch2 = malloc(sizeof(Branch));	//CityB.branch
 	
+	/*
+	 CityA.pBranch1 = Branch1* (Branch1.city = cityB)
+	 
+	 CityB.pBranch2 = Branch2* (Branch2.city = cityB)
+	 */
 	
 	//Configure les branches
 	Branch1->city = cityB;
@@ -55,9 +60,13 @@ bool City_branchLink(pCity cityA, pCity cityB, unsigned int dist){
 bool City_branchAdd(pCity city, pBranch branch){
 	//Vérifie si city.branch est vide
 	if(city->branch == NULL){
-		city->branch = branch;
-		
+		city->branch = branch;	
 	} else {
+		/*
+			city{
+				branch: [branch1(cityB).next -> branch2(cityC).next -> branch3(cityD).next]
+			}
+		 */
 		pBranch cursor = branch_walkToEnd(city->branch);
 		cursor->next = branch;
 	}

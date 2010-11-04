@@ -1,6 +1,6 @@
 #include "City.h"
 #include "Misc.h"
-
+#include "Search_DefCon1.h"
 
 int main (int argc, const char * argv[]) {
 	 	
@@ -54,9 +54,12 @@ int main (int argc, const char * argv[]) {
 	City_branchLink(Bucarest, Giurgiu, 90);
 	
 	
+	
 	/*  Autres villes à droite */
 	
 	/*--------------DESTRUCTION------------*/
+	
+	Search_defCon1(Arad, Bucarest);
 	
 	//cityDestroy();
 	

@@ -6,14 +6,12 @@
  *  Copyright 2010 __MyCompanyName__. All rights reserved.
  *
  */
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 #ifndef _CITY_h
 #define _CITY_h
 
-typedef enum{false,true}bool;
+#include "env.h"
+
 
 typedef struct City* pCity;
 typedef struct Branch* pBranch;
