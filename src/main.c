@@ -6,8 +6,6 @@
 
 int main (int argc, const char * argv[]) {
 	
-
-	
 	//Instanciation des villes
 	pCity Arad = City_create("Arad");
 	pCity Zerind = City_create("Zerind");
@@ -23,6 +21,12 @@ int main (int argc, const char * argv[]) {
 	pCity RimnicuViclea = City_create("RimnicuViclea");
 	pCity Bucarest = City_create("Bucarest");
 	pCity Giurgiu = City_create("Giurgiu");
+	pCity Urziceni = City_create("Urziceni");
+	pCity Hirsova = City_create("Hirsova");
+	pCity Eforie = City_create("Eforie");
+	pCity Vaslui = City_create("Vaslui");
+	pCity Lasi = City_create("Lasi");
+	pCity Neamt = City_create("Neamt");
 	
 	//Création des liens entre les villes
 	City_branchLink(Arad, Zerind, 75);
@@ -55,6 +59,18 @@ int main (int argc, const char * argv[]) {
 	City_branchLink(Pitesti, Bucarest, 101);
 	
 	City_branchLink(Bucarest, Giurgiu, 90);
+	
+	City_branchLink(Bucarest, Urziceni, 85);
+	
+	City_branchLink(Urziceni, Hirsova, 98);
+	City_branchLink(Urziceni, Vaslui, 142);
+	
+	City_branchLink(Hirsova, Eforie, 86);
+	
+	City_branchLink(Vaslui, Lasi, 92);
+	
+	City_branchLink(Lasi, Neamt, 87);
+	
 	
 	//Lancement des algorithmes de recherche
 	printf("\nRecherche en largeur:\n");

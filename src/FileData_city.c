@@ -64,5 +64,6 @@ void FileData_printRoute(pFileData_city route){
 	
 	printf("(%dkm, %d étapes) %s\n", h->dist, h->depth, bstr2cstr(b, '\0'));
 	
-	//bdestroy(b);
+	bdestroy(b);
+	bdestroy(a);
 }
