@@ -1,7 +1,7 @@
 #include "City.h"
 #include "Misc.h"
 #include "Search_DefCon1.h"
-//coucou fg 
+
 int main (int argc, const char * argv[]) {
 	 	
 	/*---------INITIALISATION----------*/
@@ -44,7 +44,7 @@ int main (int argc, const char * argv[]) {
 	City_branchLink(RimnicuViclea, Siblu, 80);
 	City_branchLink(RimnicuViclea, Pitesti, 97);
 	
-	City_branchLink(Siblu, Oradea, 151);//devrait générer une erreur ici car ce lien existe déjà !
+	//City_branchLink(Siblu, Oradea, 151);//devrait générer une erreur ici car ce lien existe déjà !
 	
 	City_branchLink(Siblu, Fagaras, 99);
 	
