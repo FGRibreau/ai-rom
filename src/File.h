@@ -14,40 +14,14 @@
 
 #include "env.h"
 
-/*typedef struct FileBranch_node* pFileBranch_node;
-struct FileBranch_node{
-	pCity		city;
-	int			dist;		//Distance depuis le début de la route
-	int			depth;		// Profondeur
-	pFileBranch_node parent;		//Pointeur vers le noeuds parent
-} FileBranch_node;*/
-
 typedef struct File* pFile;
 struct File{
 	void* data;			//Pointe vers une route dans la file
 	pFile next;			//Pointe vers le prochain élément dans la file
 	pFile prev;
-} FileBranch;
+} File;
 
-/*
- (FileBranch)maFile = {
-	
-	(FileBranche_node)[
-		[city:Arad*, dist:0, depth:0, parent:null]
-			[city:Siblu*, dist:140, depth:1, parent: (pointeur vers ligne du dessus)]
-				[city:Fagaras*, dist:239, depth:2, parent: (pointeur vers ligne du dessus)]
-				...]
-	
-	(FileBranche_node)[
-		[city:Arad*, dist:0, depth:0, parent:null]
-			[city:Siblu*, dist:140, depth:1, parent: (pointeur vers ligne du dessus)]
-				[city:Fagaras*, dist:239, depth:2, parent: (pointeur vers ligne du dessus)]
-				...]
- };
- 
- */
 
-//File de Branch
 pFile File_create();
 void File_push(pFile* file, void* data);
 bool File_isEmpty(pFile file);

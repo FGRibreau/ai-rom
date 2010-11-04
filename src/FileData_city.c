@@ -47,7 +47,6 @@ void FileData_printRoute(pFileData_city route){
 	
 	bstring b = bformat("(%dkm, %d étapes) ", route->dist, route->depth);
 	
-	
 	do {
 		bconcat(b, bformat("%s", route->city->name));
 		

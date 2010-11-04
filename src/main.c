@@ -1,11 +1,13 @@
 #include "City.h"
 #include "Misc.h"
-#include "SearchWidth_withAllReachedRoad.h"
-#include "SearchWidth.h"
+#include "Search/SearchWidth_withAllReachedRoad.h"
+#include "Search/SearchWidth.h"
 
 int main (int argc, const char * argv[]) {
-	 	
-	/*---------INITIALISATION----------*/
+	
+
+	
+	//Instanciation des villes
 	pCity Arad = City_create("Arad");
 	pCity Zerind = City_create("Zerind");
 	pCity Oradea = City_create("Oradea");
@@ -20,9 +22,8 @@ int main (int argc, const char * argv[]) {
 	pCity RimnicuViclea = City_create("RimnicuViclea");
 	pCity Bucarest = City_create("Bucarest");
 	pCity Giurgiu = City_create("Giurgiu");
-	/*-------------------------------------*/
-
-
+	
+	//Création des liens entre les villes
 	City_branchLink(Arad, Zerind, 75);
 	City_branchLink(Arad, Siblu, 140);
 	City_branchLink(Arad, Timisoara, 118);
@@ -45,7 +46,7 @@ int main (int argc, const char * argv[]) {
 	City_branchLink(RimnicuViclea, Siblu, 80);
 	City_branchLink(RimnicuViclea, Pitesti, 97);
 	
-	//City_branchLink(Siblu, Oradea, 151);//devrait générer une erreur ici car ce lien existe déjà !
+	//City_branchLink(Siblu, Oradea, 151);//Cette ligne génère une erreur car ce lien existe déjà
 	
 	City_branchLink(Siblu, Fagaras, 99);
 	
@@ -54,12 +55,8 @@ int main (int argc, const char * argv[]) {
 	
 	City_branchLink(Bucarest, Giurgiu, 90);
 	
+	//Lancement des algorithmes de recherche
 	
-	/*  Autres villes à droite */
-	
-	/*--------------DESTRUCTION------------*/
-	
-	//
 	printf("\nRecherche en largeur:\n");
 	FileData_printRoute(SearchWidth(Arad, Bucarest));
 	
@@ -68,7 +65,6 @@ int main (int argc, const char * argv[]) {
 	
 
 	afficherGraph(Arad);
-	
 	
 	return 0;
 }
