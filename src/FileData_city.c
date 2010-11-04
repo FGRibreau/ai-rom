@@ -29,7 +29,6 @@ pFileData_city FileData_city_append(pFileData_city route, pBranch branch){
 }
 
 bool FileData_cityAlreadyExist(pFileData_city route, pCity city){
-	//pFileData_city cursor = route;
 	
 	do {
 		if(route->city == city){
@@ -41,6 +40,11 @@ bool FileData_cityAlreadyExist(pFileData_city route, pCity city){
 }
 
 void FileData_printRoute(pFileData_city route){
+	if(route == NULL){
+		printf("Aucune route trouvée");
+		return;
+	}
+	
 	do {
 		printf("%s <- ", route->city->name);
 	} while (route = route->parent);

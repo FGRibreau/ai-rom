@@ -1,6 +1,7 @@
 #include "City.h"
 #include "Misc.h"
-#include "Search_DefCon1.h"
+#include "SearchWidth_withAllReachedRoad.h"
+#include "SearchWidth.h"
 
 int main (int argc, const char * argv[]) {
 	 	
@@ -54,15 +55,18 @@ int main (int argc, const char * argv[]) {
 	City_branchLink(Bucarest, Giurgiu, 90);
 	
 	
-	
 	/*  Autres villes à droite */
 	
 	/*--------------DESTRUCTION------------*/
 	
-	Search_defCon1(Arad, Bucarest);
+	//
+	printf("\nRecherche en largeur:\n");
+	FileData_printRoute(SearchWidth(Arad, Bucarest));
 	
-	//cityDestroy();
+	printf("\n\nRecherche en profondeur:\n");
+	//FileData_printRoute(SearchDepth(Arad, Bucarest));
 	
+
 	afficherGraph(Arad);
 	
 	
