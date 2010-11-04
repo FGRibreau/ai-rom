@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "vendor/bstrlib.h"
 typedef enum{false,true}bool;
 
 #endif
