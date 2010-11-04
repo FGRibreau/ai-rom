@@ -2,6 +2,7 @@
 #include "Misc.h"
 #include "Search/SearchWidth_withAllReachedRoad.h"
 #include "Search/SearchWidth.h"
+#include "Search/SearchDepth.h"
 
 int main (int argc, const char * argv[]) {
 	
@@ -56,15 +57,14 @@ int main (int argc, const char * argv[]) {
 	City_branchLink(Bucarest, Giurgiu, 90);
 	
 	//Lancement des algorithmes de recherche
-	
 	printf("\nRecherche en largeur:\n");
 	FileData_printRoute(SearchWidth(Arad, Bucarest));
 	
-	printf("\n\nRecherche en profondeur:\n");
-	//FileData_printRoute(SearchDepth(Arad, Bucarest));
+	printf("\nRecherche en profondeur:\n");
+	FileData_printRoute(SearchDepth(Arad, Bucarest));
 	
-
-	afficherGraph(Arad);
+	//Erase all pCity
+	//City_destroy();
 	
 	return 0;
 }

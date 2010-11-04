@@ -45,18 +45,24 @@ void FileData_printRoute(pFileData_city route){
 		return;
 	}
 	
-	bstring b = bformat("(%dkm, %d étapes) ", route->dist, route->depth);
+	pFileData_city h = route;
 	
+	bstring b = bfromcstr("");
+	bstring a;
 	do {
-		bconcat(b, bformat("%s", route->city->name));
+		a = bformat("%s", route->city->name);
+		bconcat(a, b);
+		b = a;
 		
 		if(route->parent != NULL){
-			bconcat(b, bfromcstr(" <- "));
+			a = bfromcstr(" -> ");
+			bconcat(a, b);
+			b = a;
 		}
 	} while (route = route->parent);
 	
 	
-	printf("%s\n", bstr2cstr(b, '\0'));
+	printf("(%dkm, %d étapes) %s\n", h->dist, h->depth, bstr2cstr(b, '\0'));
 	
-	bdestroy(b);
+	//bdestroy(b);
 }

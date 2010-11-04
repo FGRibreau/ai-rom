@@ -23,7 +23,7 @@ pCity City_create(char* name){
 	
 void City_destroy(pCity city){
 	
-	free(city->name);
+	//free(city->name);
 	
 	//TODO Parcourir l'arbre et désalloué
 	

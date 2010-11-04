@@ -6,14 +6,13 @@
  *  Copyright 2010 __MyCompanyName__. All rights reserved.
  *
  */
-#ifndef _SEARCHWIDTH_WILLALLREACHEDROAD_h
-#define _SEARCHWIDTH_WILLALLREACHEDROAD_h
+#ifndef _SEARCHDEPTH_h
+#define _SEARCHDEPTH_h
 #include "../env.h"
 #include "../City.h"
-#include "../File.h"
+#include "../Stack.h"
 #include "../FileData_city.h"
 
-void Search_defCon1(pCity from, pCity to);
-void Search_showFileReached(pFile fileReached);//Affiche la liste des routes trouvées
+pFileData_city SearchDepth(pCity from, pCity to);
 
 #endif

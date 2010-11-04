@@ -9,7 +9,7 @@
 
 #include "Stack.h"
 
-pStack Stack_new(void){
+pStack Stack_create(void){
 	return (NULL);
 }
 
@@ -66,3 +66,22 @@ void Stack_delete(pStack* stack){
 	}
 	return;
 }
+
+bool Stack_isEmpty(pStack stack){
+	return stack == NULL;
+}
+
+int Stack_size(pStack stack){
+	if(stack == NULL)
+		return 0;
+	
+	int i = 0;
+	
+	while(stack){
+		i++;
+		stack = stack->next;
+	}
+	
+	return i;
+}
+
