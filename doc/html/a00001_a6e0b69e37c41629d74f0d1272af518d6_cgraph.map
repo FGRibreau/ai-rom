@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$a00002.html#aaefdeb69345996a92b53ed339d4df945" title="Processus::getName" alt="" coords="243,5,405,35"/>
+<area shape="rect" id="node5" href="$a00002.html#a1e5750504f67579b1ace0e87c80237f2" title="Retourne l&#39;adresse du processus suivant." alt="" coords="219,59,429,88"/>
+<area shape="rect" id="node7" href="$a00002.html#a76a24d289fade008c3ff48aebfa049f4" title="Processus::getPID" alt="" coords="251,112,397,141"/>
+<area shape="rect" id="node9" href="$a00002.html#a693cfb69caf74db3132d5a72f7c1edfa" title="Retourne l&#39;adresse du processus précédent." alt="" coords="220,165,428,195"/>
+</map>

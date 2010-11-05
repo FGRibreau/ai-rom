@@ -1,13 +1,4 @@
-/*
- *  File.h
- *  TP1
- *
- *  Created by Francois-Guillaume Ribreau on 03/11/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
- *
-	FILE: FIFO (First In First out) //Profondeur
-	PILE: LIFO (Last In First Out)	//Largeur
- */
+
 
 #ifndef _FILE_h
 #define _FILE_h

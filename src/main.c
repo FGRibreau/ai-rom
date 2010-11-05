@@ -1,6 +1,4 @@
 #include "City.h"
-#include "Misc.h"
-#include "Search/SearchWidth_withAllReachedRoad.h"
 #include "Search/SearchWidth.h"
 #include "Search/SearchDepth.h"
 
@@ -27,6 +25,10 @@ int main (int argc, const char * argv[]) {
 	pCity Vaslui = City_create("Vaslui");
 	pCity Lasi = City_create("Lasi");
 	pCity Neamt = City_create("Neamt");
+	
+	//TODO: Insérer toutes les villes dans une collection de ville
+	//CityCollection_push(&CityCollection, City_create("Neamt"));
+	//CityCollection_getCityByName(&CityCollection,"Neamt");
 	
 	//Création des liens entre les villes
 	City_branchLink(Arad, Zerind, 75);
@@ -79,7 +81,7 @@ int main (int argc, const char * argv[]) {
 	printf("\nRecherche en profondeur:\n");
 	FileData_printRoute(SearchDepth(Arad, Bucarest));
 	
-	//Erase all pCity
+	//Free all pCity
 	//City_destroy();
 	
 	return 0;

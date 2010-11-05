@@ -1,11 +1,4 @@
-/*
- *  File_city.h
- *  TP1
- *
- *  Created by Francois-Guillaume Ribreau on 04/11/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
- *
- */
+
 #ifndef _FILEDATA_city_h
 #define _FILEDATA_city_h
 

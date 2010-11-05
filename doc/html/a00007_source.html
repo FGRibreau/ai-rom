@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>GestionMemoireCentrale:  Fichier source de src/Class/Processus.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&nbsp;de&nbsp;fichier</span></a></li>
+    </ul>
+  </div>
+<h1>src/Class/Processus.h</h1><a href="a00007.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _PROCESSUS_H_</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _PROCESSUS_H_</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span><span class="comment">/*</span>
+<a name="l00004"></a>00004 <span class="comment"> *  @file       Processus.h</span>
+<a name="l00005"></a>00005 <span class="comment"> *      @brief  Header de la classe Processus</span>
+<a name="l00006"></a>00006 <span class="comment"> */</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;iomanip&gt;</span>
+<a name="l00009"></a>00009 <span class="keyword">using namespace </span>std;
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;../ui.h&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00017"></a><a class="code" href="a00002.html">00017</a> <span class="keyword">class </span><a class="code" href="a00002.html" title="Modèle de processus.">Processus</a> {
+<a name="l00018"></a>00018         <span class="keyword">private</span>:
+<a name="l00022"></a><a class="code" href="a00002.html#a4ea4816c57cef101d04c0671de3f2215">00022</a>                 <span class="keywordtype">int</span> <a class="code" href="a00002.html#a4ea4816c57cef101d04c0671de3f2215" title="Identifiant du processus.">_pid</a>;
+<a name="l00023"></a>00023 
+<a name="l00027"></a><a class="code" href="a00002.html#ac0162c45b63d358058d0f9f5042e1b9a">00027</a>                 <span class="keywordtype">string</span> <a class="code" href="a00002.html#ac0162c45b63d358058d0f9f5042e1b9a" title="Nom du processus.">_name</a>;
+<a name="l00028"></a>00028 
+<a name="l00032"></a><a class="code" href="a00002.html#a209ca89a7b955bf74df8cb5a3eebe108">00032</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00002.html#a209ca89a7b955bf74df8cb5a3eebe108" title="Taille du processus.">_size</a>;
+<a name="l00033"></a>00033 
+<a name="l00037"></a><a class="code" href="a00002.html#a796722838a7528506393752f3ee9617d">00037</a>                 <a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* <a class="code" href="a00002.html#a796722838a7528506393752f3ee9617d" title="Pointeur sur le prochain processus.">_nextProcessus</a>;
+<a name="l00038"></a>00038 
+<a name="l00042"></a><a class="code" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed">00042</a>                 <a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* <a class="code" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed" title="Pointeur sur le processus précédent.">_prevProcessus</a>;
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="keyword">public</span>:
+<a name="l00048"></a>00048                 <a class="code" href="a00002.html#ac40e28c9607b1611e2d369f0ddbe3c53" title="Constructeur du processus.">Processus</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pid, <span class="keywordtype">string</span> nomProcess, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ProcessSize);
+<a name="l00049"></a>00049                 
+<a name="l00050"></a><a class="code" href="a00002.html#a76a24d289fade008c3ff48aebfa049f4">00050</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00002.html#a76a24d289fade008c3ff48aebfa049f4">getPID</a>(){<span class="keywordflow">return</span> <a class="code" href="a00002.html#a4ea4816c57cef101d04c0671de3f2215" title="Identifiant du processus.">_pid</a>;}
+<a name="l00051"></a><a class="code" href="a00002.html#afa9cc4552666c89af6e7f08d9624c98d">00051</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00002.html#afa9cc4552666c89af6e7f08d9624c98d">getSize</a>(){<span class="keywordflow">return</span> <a class="code" href="a00002.html#a209ca89a7b955bf74df8cb5a3eebe108" title="Taille du processus.">_size</a>;}
+<a name="l00052"></a><a class="code" href="a00002.html#aaefdeb69345996a92b53ed339d4df945">00052</a>                 <span class="keywordtype">string</span> <a class="code" href="a00002.html#aaefdeb69345996a92b53ed339d4df945">getName</a>(){<span class="keywordflow">return</span> <a class="code" href="a00002.html#ac0162c45b63d358058d0f9f5042e1b9a" title="Nom du processus.">_name</a>;}
+<a name="l00053"></a>00053         
+<a name="l00057"></a>00057                 <span class="keywordtype">void</span> <a class="code" href="a00002.html#aef4e0e51009f71c12bca499c1955f85b" title="Attribuer une nouvelle valeur au processus suivant.">setNextProcess</a>(<a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* nextProcess);
+<a name="l00058"></a>00058 
+<a name="l00062"></a>00062                 <span class="keywordtype">void</span> <a class="code" href="a00002.html#aefb317c1de924c3f96c1090f42e497eb" title="Attribuer une nouvelle valeur au processus précédent.">setPrevProcess</a>(<a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* prevProcess);
+<a name="l00063"></a>00063 
+<a name="l00067"></a>00067                 <a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* <a class="code" href="a00002.html#a1e5750504f67579b1ace0e87c80237f2" title="Retourne l&amp;#39;adresse du processus suivant.">getNextProcess</a>();
+<a name="l00068"></a>00068 
+<a name="l00072"></a>00072                 <a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* <a class="code" href="a00002.html#a693cfb69caf74db3132d5a72f7c1edfa" title="Retourne l&amp;#39;adresse du processus précédent.">getPrevProcess</a>();
+<a name="l00073"></a>00073         
+<a name="l00082"></a>00082                 <span class="keyword">friend</span> ostream&amp; <a class="code" href="a00002.html#a68f9a6a9e752fd2944eacb271a04d4c5" title="Surcharge de Cout.">operator&lt;&lt; </a>(ostream &amp;out, <a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* pross);
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 };
+<a name="l00085"></a>00085 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Généré par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

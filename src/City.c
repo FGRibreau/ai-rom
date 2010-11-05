@@ -1,11 +1,3 @@
-/*
- *  plan.c
- *  TP1
- *
- *  Created by Francois-Guillaume Ribreau on 22/10/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
- *
- */
 
 #include "City.h"
 
@@ -22,12 +14,7 @@ pCity City_create(char* name){
 }
 	
 void City_destroy(pCity city){
-	
-	//free(city->name);
-	
 	//TODO Parcourir l'arbre et désalloué
-	
-	free(city);
 }
 
 bool City_branchLink(pCity cityA, pCity cityB, unsigned int dist){
@@ -39,12 +26,6 @@ bool City_branchLink(pCity cityA, pCity cityB, unsigned int dist){
 
 	pBranch Branch1 = malloc(sizeof(Branch))	//CityA.branch
 	,		Branch2 = malloc(sizeof(Branch));	//CityB.branch
-	
-	/*
-	 CityA.pBranch1 = Branch1* (Branch1.city = cityB)
-	 
-	 CityB.pBranch2 = Branch2* (Branch2.city = cityB)
-	 */
 	
 	//Configure les branches
 	Branch1->city = cityB;
@@ -62,11 +43,6 @@ bool City_branchAdd(pCity city, pBranch branch){
 	if(city->branch == NULL){
 		city->branch = branch;	
 	} else {
-		/*
-			city{
-				branch: [branch1(cityB).next -> branch2(cityC).next -> branch3(cityD).next]
-			}
-		 */
 		pBranch cursor = branch_walkToEnd(city->branch);
 		cursor->next = branch;
 	}

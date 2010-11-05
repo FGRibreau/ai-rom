@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>GestionMemoireCentrale: Référence de la classe Processus</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Liste&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&nbsp;de&nbsp;classe</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence de la classe Processus</h1><!-- doxytag: class="Processus" -->
+<p>Modèle de processus.  
+<a href="#_details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00007_source.html">Processus.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de Processus:</div>
+<div class="dynsection">
+<div class="center"><img src="a00031.png" border="0" usemap="#_processus_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
+
+<p><a href="a00032.html">Liste de tous les membres</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aaefdeb69345996a92b53ed339d4df945">getName</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00002.html">Processus</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a1e5750504f67579b1ace0e87c80237f2">getNextProcess</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retourne l'adresse du processus suivant.  <a href="#a1e5750504f67579b1ace0e87c80237f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a76a24d289fade008c3ff48aebfa049f4">getPID</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00002.html">Processus</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a693cfb69caf74db3132d5a72f7c1edfa">getPrevProcess</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retourne l'adresse du processus précédent.  <a href="#a693cfb69caf74db3132d5a72f7c1edfa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#afa9cc4552666c89af6e7f08d9624c98d">getSize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ac40e28c9607b1611e2d369f0ddbe3c53">Processus</a> (unsigned int pid, string nomProcess, unsigned int ProcessSize)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur du processus.  <a href="#ac40e28c9607b1611e2d369f0ddbe3c53"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aef4e0e51009f71c12bca499c1955f85b">setNextProcess</a> (<a class="el" href="a00002.html">Processus</a> *nextProcess)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attribuer une nouvelle valeur au processus suivant.  <a href="#aef4e0e51009f71c12bca499c1955f85b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aefb317c1de924c3f96c1090f42e497eb">setPrevProcess</a> (<a class="el" href="a00002.html">Processus</a> *prevProcess)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attribuer une nouvelle valeur au processus précédent.  <a href="#aefb317c1de924c3f96c1090f42e497eb"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Attributs privés</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ac0162c45b63d358058d0f9f5042e1b9a">_name</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Nom du processus.  <a href="#ac0162c45b63d358058d0f9f5042e1b9a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00002.html">Processus</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a796722838a7528506393752f3ee9617d">_nextProcessus</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointeur sur le prochain processus.  <a href="#a796722838a7528506393752f3ee9617d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a4ea4816c57cef101d04c0671de3f2215">_pid</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Identifiant du processus.  <a href="#a4ea4816c57cef101d04c0671de3f2215"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00002.html">Processus</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed">_prevProcessus</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointeur sur le processus précédent.  <a href="#a80059499c9ef11fd16c5af1a2df8c3ed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a209ca89a7b955bf74df8cb5a3eebe108">_size</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Taille du processus.  <a href="#a209ca89a7b955bf74df8cb5a3eebe108"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Amis</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a68f9a6a9e752fd2944eacb271a04d4c5">operator&lt;&lt;</a> (ostream &amp;out, <a class="el" href="a00002.html">Processus</a> *pross)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Surcharge de Cout.  <a href="#a68f9a6a9e752fd2944eacb271a04d4c5"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>Modèle de processus. </p>
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00017">17</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+<hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="ac40e28c9607b1611e2d369f0ddbe3c53"></a><!-- doxytag: member="Processus::Processus" ref="ac40e28c9607b1611e2d369f0ddbe3c53" args="(unsigned int pid, string nomProcess, unsigned int ProcessSize)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Processus::Processus </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>nomProcess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>ProcessSize</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur du processus. </p>
+
+<p>Définition à la ligne <a class="el" href="a00006_source.html#l00010">10</a> du fichier <a class="el" href="a00006_source.html">Processus.cpp</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00010"></a>00010                                                                     {
+<a name="l00011"></a>00011         <a class="code" href="a00002.html#a4ea4816c57cef101d04c0671de3f2215" title="Identifiant du processus.">_pid</a> = pid;
+<a name="l00012"></a>00012         <a class="code" href="a00002.html#ac0162c45b63d358058d0f9f5042e1b9a" title="Nom du processus.">_name</a> = name;
+<a name="l00013"></a>00013         <a class="code" href="a00002.html#a209ca89a7b955bf74df8cb5a3eebe108" title="Taille du processus.">_size</a> = size;
+<a name="l00014"></a>00014         <a class="code" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed" title="Pointeur sur le processus précédent.">_prevProcessus</a> = NULL;
+<a name="l00015"></a>00015         <a class="code" href="a00002.html#a796722838a7528506393752f3ee9617d" title="Pointeur sur le prochain processus.">_nextProcessus</a> = NULL;
+<a name="l00016"></a>00016 };
+</pre></div></p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="aaefdeb69345996a92b53ed339d4df945"></a><!-- doxytag: member="Processus::getName" ref="aaefdeb69345996a92b53ed339d4df945" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Processus::getName </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00052">52</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00052"></a>00052 {<span class="keywordflow">return</span> <a class="code" href="a00002.html#ac0162c45b63d358058d0f9f5042e1b9a" title="Nom du processus.">_name</a>;}
+</pre></div></p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dynsection">
+<div class="center"><img src="a00002_aaefdeb69345996a92b53ed339d4df945_icgraph.png" border="0" usemap="#a00002_aaefdeb69345996a92b53ed339d4df945_icgraph_map" alt=""></div>
+<map name="a00002_aaefdeb69345996a92b53ed339d4df945_icgraph_map" id="a00002_aaefdeb69345996a92b53ed339d4df945_icgraph">
+<area shape="rect" id="node3" href="a00001.html#a6e0b69e37c41629d74f0d1272af518d6" title="Affiche la liste des processus alloués." alt="" coords="220,5,383,35"/><area shape="rect" id="node7" href="a00006.html#a68f9a6a9e752fd2944eacb271a04d4c5" title="Surcharge de cout." alt="" coords="251,59,352,88"/><area shape="rect" id="node5" href="a00010.html#af3ed9c200de85b53c94cd18764b246a2" title="main" alt="" coords="433,5,487,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e5750504f67579b1ace0e87c80237f2"></a><!-- doxytag: member="Processus::getNextProcess" ref="a1e5750504f67579b1ace0e87c80237f2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00002.html">Processus</a> * Processus::getNextProcess </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retourne l'adresse du processus suivant. </p>
+<p>Récupération du processus suivant. </p>
+
+<p>Définition à la ligne <a class="el" href="a00006_source.html#l00035">35</a> du fichier <a class="el" href="a00006_source.html">Processus.cpp</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00035"></a>00035                                     {
+<a name="l00036"></a>00036         <span class="keywordflow">return</span> <a class="code" href="a00002.html#a796722838a7528506393752f3ee9617d" title="Pointeur sur le prochain processus.">_nextProcessus</a>;
+<a name="l00037"></a>00037 };
+</pre></div></p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dynsection">
+<div class="center"><img src="a00002_a1e5750504f67579b1ace0e87c80237f2_icgraph.png" border="0" usemap="#a00002_a1e5750504f67579b1ace0e87c80237f2_icgraph_map" alt=""></div>
+<map name="a00002_a1e5750504f67579b1ace0e87c80237f2_icgraph_map" id="a00002_a1e5750504f67579b1ace0e87c80237f2_icgraph">
+<area shape="rect" id="node3" href="a00001.html#a9dbb07d2081d0c7d1477b3ec2d6fb040" title="Désallocation mémoire." alt="" coords="524,5,687,35"/><area shape="rect" id="node7" href="a00001.html#a66f16f36a645fe71ca1d9d338e264785" title="Trouver un processus par son PID." alt="" coords="264,57,475,87"/><area shape="rect" id="node11" href="a00001.html#a6e0b69e37c41629d74f0d1272af518d6" title="Affiche la liste des processus alloués." alt="" coords="524,109,687,139"/><area shape="rect" id="node5" href="a00010.html#af3ed9c200de85b53c94cd18764b246a2" title="main" alt="" coords="737,57,791,87"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a76a24d289fade008c3ff48aebfa049f4"></a><!-- doxytag: member="Processus::getPID" ref="a76a24d289fade008c3ff48aebfa049f4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Processus::getPID </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00050">50</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00050"></a>00050 {<span class="keywordflow">return</span> <a class="code" href="a00002.html#a4ea4816c57cef101d04c0671de3f2215" title="Identifiant du processus.">_pid</a>;}
+</pre></div></p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dynsection">
+<div class="center"><img src="a00002_a76a24d289fade008c3ff48aebfa049f4_icgraph.png" border="0" usemap="#a00002_a76a24d289fade008c3ff48aebfa049f4_icgraph_map" alt=""></div>
+<map name="a00002_a76a24d289fade008c3ff48aebfa049f4_icgraph_map" id="a00002_a76a24d289fade008c3ff48aebfa049f4_icgraph">
+<area shape="rect" id="node3" href="a00001.html#a990cf4f5426b1f2e67519f5e7c34fa63" title="Allocation de mémoire pour un nouveau procéssus." alt="" coords="461,5,629,35"/><area shape="rect" id="node7" href="a00001.html#a66f16f36a645fe71ca1d9d338e264785" title="Trouver un processus par son PID." alt="" coords="203,57,413,87"/><area shape="rect" id="node13" href="a00001.html#a6e0b69e37c41629d74f0d1272af518d6" title="Affiche la liste des processus alloués." alt="" coords="464,163,627,192"/><area shape="rect" id="node16" href="a00006.html#a68f9a6a9e752fd2944eacb271a04d4c5" title="Surcharge de cout." alt="" coords="257,161,359,191"/><area shape="rect" id="node18" href="a00001.html#a77a7d3c2471932d0f15c63bc05785732" title="Permet la sélection d&#39;un processus." alt="" coords="215,215,401,244"/><area shape="rect" id="node5" href="a00010.html#af3ed9c200de85b53c94cd18764b246a2" title="main" alt="" coords="679,109,732,139"/><area shape="rect" id="node9" href="a00001.html#a9dbb07d2081d0c7d1477b3ec2d6fb040" title="Désallocation mémoire." alt="" coords="464,109,627,139"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a693cfb69caf74db3132d5a72f7c1edfa"></a><!-- doxytag: member="Processus::getPrevProcess" ref="a693cfb69caf74db3132d5a72f7c1edfa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00002.html">Processus</a> * Processus::getPrevProcess </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retourne l'adresse du processus précédent. </p>
+<p>Récupération du processus précédent. </p>
+
+<p>Définition à la ligne <a class="el" href="a00006_source.html#l00042">42</a> du fichier <a class="el" href="a00006_source.html">Processus.cpp</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00042"></a>00042                                     {
+<a name="l00043"></a>00043         <span class="keywordflow">return</span> <a class="code" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed" title="Pointeur sur le processus précédent.">_prevProcessus</a>;
+<a name="l00044"></a>00044 };
+</pre></div></p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dynsection">
+<div class="center"><img src="a00002_a693cfb69caf74db3132d5a72f7c1edfa_icgraph.png" border="0" usemap="#a00002_a693cfb69caf74db3132d5a72f7c1edfa_icgraph_map" alt=""></div>
+<map name="a00002_a693cfb69caf74db3132d5a72f7c1edfa_icgraph_map" id="a00002_a693cfb69caf74db3132d5a72f7c1edfa_icgraph">
+<area shape="rect" id="node3" href="a00001.html#a9dbb07d2081d0c7d1477b3ec2d6fb040" title="Désallocation mémoire." alt="" coords="263,5,425,35"/><area shape="rect" id="node7" href="a00001.html#a6e0b69e37c41629d74f0d1272af518d6" title="Affiche la liste des processus alloués." alt="" coords="263,59,425,88"/><area shape="rect" id="node5" href="a00010.html#af3ed9c200de85b53c94cd18764b246a2" title="main" alt="" coords="476,32,529,61"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afa9cc4552666c89af6e7f08d9624c98d"></a><!-- doxytag: member="Processus::getSize" ref="afa9cc4552666c89af6e7f08d9624c98d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Processus::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00051">51</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00051"></a>00051 {<span class="keywordflow">return</span> <a class="code" href="a00002.html#a209ca89a7b955bf74df8cb5a3eebe108" title="Taille du processus.">_size</a>;}
+</pre></div></p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dynsection">
+<div class="center"><img src="a00002_afa9cc4552666c89af6e7f08d9624c98d_icgraph.png" border="0" usemap="#a00002_afa9cc4552666c89af6e7f08d9624c98d_icgraph_map" alt=""></div>
+<map name="a00002_afa9cc4552666c89af6e7f08d9624c98d_icgraph_map" id="a00002_afa9cc4552666c89af6e7f08d9624c98d_icgraph">
+<area shape="rect" id="node3" href="a00001.html#a9dbb07d2081d0c7d1477b3ec2d6fb040" title="Désallocation mémoire." alt="" coords="207,5,369,35"/><area shape="rect" id="node7" href="a00006.html#a68f9a6a9e752fd2944eacb271a04d4c5" title="Surcharge de cout." alt="" coords="237,59,339,88"/><area shape="rect" id="node5" href="a00010.html#af3ed9c200de85b53c94cd18764b246a2" title="main" alt="" coords="420,5,473,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aef4e0e51009f71c12bca499c1955f85b"></a><!-- doxytag: member="Processus::setNextProcess" ref="aef4e0e51009f71c12bca499c1955f85b" args="(Processus *nextProcess)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Processus::setNextProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00002.html">Processus</a> *&nbsp;</td>
+          <td class="paramname"> <em>nextProcess</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attribuer une nouvelle valeur au processus suivant. </p>
+<p>Set du prochain processus. </p>
+
+<p>Définition à la ligne <a class="el" href="a00006_source.html#l00021">21</a> du fichier <a class="el" href="a00006_source.html">Processus.cpp</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00021"></a>00021                                                     {
+<a name="l00022"></a>00022         <a class="code" href="a00002.html#a796722838a7528506393752f3ee9617d" title="Pointeur sur le prochain processus.">_nextProcessus</a> = nextProcess;
+<a name="l00023"></a>00023 };
+</pre></div></p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dynsection">
+<div class="center"><img src="a00002_aef4e0e51009f71c12bca499c1955f85b_icgraph.png" border="0" usemap="#a00002_aef4e0e51009f71c12bca499c1955f85b_icgraph_map" alt=""></div>
+<map name="a00002_aef4e0e51009f71c12bca499c1955f85b_icgraph_map" id="a00002_aef4e0e51009f71c12bca499c1955f85b_icgraph">
+<area shape="rect" id="node3" href="a00001.html#a990cf4f5426b1f2e67519f5e7c34fa63" title="Allocation de mémoire pour un nouveau procéssus." alt="" coords="264,5,432,35"/><area shape="rect" id="node7" href="a00001.html#a9dbb07d2081d0c7d1477b3ec2d6fb040" title="Désallocation mémoire." alt="" coords="267,59,429,88"/><area shape="rect" id="node5" href="a00010.html#af3ed9c200de85b53c94cd18764b246a2" title="main" alt="" coords="481,32,535,61"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aefb317c1de924c3f96c1090f42e497eb"></a><!-- doxytag: member="Processus::setPrevProcess" ref="aefb317c1de924c3f96c1090f42e497eb" args="(Processus *prevProcess)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Processus::setPrevProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00002.html">Processus</a> *&nbsp;</td>
+          <td class="paramname"> <em>prevProcess</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attribuer une nouvelle valeur au processus précédent. </p>
+<p>Set du processus précédent. </p>
+
+<p>Définition à la ligne <a class="el" href="a00006_source.html#l00028">28</a> du fichier <a class="el" href="a00006_source.html">Processus.cpp</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00028"></a>00028                                                     {
+<a name="l00029"></a>00029         <a class="code" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed" title="Pointeur sur le processus précédent.">_prevProcessus</a> = prevProcess;
+<a name="l00030"></a>00030 };
+</pre></div></p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dynsection">
+<div class="center"><img src="a00002_aefb317c1de924c3f96c1090f42e497eb_icgraph.png" border="0" usemap="#a00002_aefb317c1de924c3f96c1090f42e497eb_icgraph_map" alt=""></div>
+<map name="a00002_aefb317c1de924c3f96c1090f42e497eb_icgraph_map" id="a00002_aefb317c1de924c3f96c1090f42e497eb_icgraph">
+<area shape="rect" id="node3" href="a00001.html#a990cf4f5426b1f2e67519f5e7c34fa63" title="Allocation de mémoire pour un nouveau procéssus." alt="" coords="261,5,429,35"/><area shape="rect" id="node7" href="a00001.html#a9dbb07d2081d0c7d1477b3ec2d6fb040" title="Désallocation mémoire." alt="" coords="264,59,427,88"/><area shape="rect" id="node5" href="a00010.html#af3ed9c200de85b53c94cd18764b246a2" title="main" alt="" coords="479,32,532,61"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions amies et associées</h2>
+<a class="anchor" id="a68f9a6a9e752fd2944eacb271a04d4c5"></a><!-- doxytag: member="Processus::operator&lt;&lt;" ref="a68f9a6a9e752fd2944eacb271a04d4c5" args="(ostream &amp;out, Processus *pross)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00002.html">Processus</a> *&nbsp;</td>
+          <td class="paramname"> <em>pross</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Surcharge de Cout. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>out</em>&nbsp;</td><td>Ostream à modifier </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>pross</em>&nbsp;</td><td><a class="el" href="a00002.html" title="Modèle de processus.">Processus</a> à afficher</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>référence vers l'objet ostream </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="a00006_source.html#l00048">48</a> du fichier <a class="el" href="a00006_source.html">Processus.cpp</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00048"></a>00048                                                     {
+<a name="l00049"></a>00049         out &lt;&lt; setiosflags(ios::left) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39;_&#39;</span>);
+<a name="l00050"></a>00050         out &lt;&lt; <span class="stringliteral">&quot;| PID&quot;</span>;
+<a name="l00051"></a>00051         out &lt;&lt; setiosflags(ios::right) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39; &#39;</span>);
+<a name="l00052"></a>00052         out &lt;&lt; pross-&gt;<a class="code" href="a00002.html#a76a24d289fade008c3ff48aebfa049f4">getPID</a>() &lt;&lt; <span class="stringliteral">&quot; |&quot;</span>;
+<a name="l00053"></a>00053         out.unsetf(ios::right);
+<a name="l00054"></a>00054         out &lt;&lt; endl &lt;&lt; setiosflags(ios::left) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39;_&#39;</span>);
+<a name="l00055"></a>00055         out &lt;&lt; <span class="stringliteral">&quot;| Nom&quot;</span>;
+<a name="l00056"></a>00056         out &lt;&lt; setiosflags(ios::right) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39; &#39;</span>);
+<a name="l00057"></a>00057         out &lt;&lt; pross-&gt;<a class="code" href="a00002.html#aaefdeb69345996a92b53ed339d4df945">getName</a>() &lt;&lt; <span class="stringliteral">&quot; |&quot;</span>;
+<a name="l00058"></a>00058         out.unsetf(ios::right);
+<a name="l00059"></a>00059         out &lt;&lt; endl &lt;&lt; setiosflags(ios::left) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39;_&#39;</span>);
+<a name="l00060"></a>00060         out &lt;&lt; <span class="stringliteral">&quot;| Taille&quot;</span>;
+<a name="l00061"></a>00061         out &lt;&lt; setiosflags(ios::right) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39; &#39;</span>);
+<a name="l00062"></a>00062         out &lt;&lt; pross-&gt;<a class="code" href="a00002.html#afa9cc4552666c89af6e7f08d9624c98d">getSize</a>() &lt;&lt; <span class="stringliteral">&quot; |&quot;</span>;
+<a name="l00063"></a>00063         out.unsetf(ios::right);
+<a name="l00064"></a>00064         out &lt;&lt; endl;
+<a name="l00065"></a>00065         
+<a name="l00066"></a>00066         <span class="keywordflow">return</span> out;
+<a name="l00067"></a>00067 }</pre></div></p>
+
+</div>
+</div>
+<hr/><h2>Documentation des données membres</h2>
+<a class="anchor" id="ac0162c45b63d358058d0f9f5042e1b9a"></a><!-- doxytag: member="Processus::_name" ref="ac0162c45b63d358058d0f9f5042e1b9a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00002.html#ac0162c45b63d358058d0f9f5042e1b9a">Processus::_name</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Nom du processus. </p>
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00027">27</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a796722838a7528506393752f3ee9617d"></a><!-- doxytag: member="Processus::_nextProcessus" ref="a796722838a7528506393752f3ee9617d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00002.html">Processus</a>* <a class="el" href="a00002.html#a796722838a7528506393752f3ee9617d">Processus::_nextProcessus</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pointeur sur le prochain processus. </p>
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00037">37</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ea4816c57cef101d04c0671de3f2215"></a><!-- doxytag: member="Processus::_pid" ref="a4ea4816c57cef101d04c0671de3f2215" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00002.html#a4ea4816c57cef101d04c0671de3f2215">Processus::_pid</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Identifiant du processus. </p>
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00022">22</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80059499c9ef11fd16c5af1a2df8c3ed"></a><!-- doxytag: member="Processus::_prevProcessus" ref="a80059499c9ef11fd16c5af1a2df8c3ed" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00002.html">Processus</a>* <a class="el" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed">Processus::_prevProcessus</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pointeur sur le processus précédent. </p>
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00042">42</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a209ca89a7b955bf74df8cb5a3eebe108"></a><!-- doxytag: member="Processus::_size" ref="a209ca89a7b955bf74df8cb5a3eebe108" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="a00002.html#a209ca89a7b955bf74df8cb5a3eebe108">Processus::_size</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Taille du processus. </p>
+
+<p>Définition à la ligne <a class="el" href="a00007_source.html#l00032">32</a> du fichier <a class="el" href="a00007_source.html">Processus.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>src/Class/<a class="el" href="a00007_source.html">Processus.h</a></li>
+<li>src/Class/<a class="el" href="a00006_source.html">Processus.cpp</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Généré par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

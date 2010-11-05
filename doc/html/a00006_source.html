@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>GestionMemoireCentrale:  Fichier source de src/Class/Processus.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&nbsp;de&nbsp;fichier</span></a></li>
+    </ul>
+  </div>
+<h1>src/Class/Processus.cpp</h1><a href="a00006.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *  @file       Processus.cpp</span>
+<a name="l00003"></a>00003 <span class="comment"> *      @brief  Implémentation de la classe Processus</span>
+<a name="l00004"></a>00004 <span class="comment"> */</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="a00007.html">Processus.h</a>&quot;</span>
+<a name="l00006"></a>00006 
+<a name="l00010"></a><a class="code" href="a00002.html#ac40e28c9607b1611e2d369f0ddbe3c53">00010</a> <a class="code" href="a00002.html#ac40e28c9607b1611e2d369f0ddbe3c53" title="Constructeur du processus.">Processus::Processus</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pid, <span class="keywordtype">string</span> name, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size){
+<a name="l00011"></a>00011         <a class="code" href="a00002.html#a4ea4816c57cef101d04c0671de3f2215" title="Identifiant du processus.">_pid</a> = pid;
+<a name="l00012"></a>00012         <a class="code" href="a00002.html#ac0162c45b63d358058d0f9f5042e1b9a" title="Nom du processus.">_name</a> = name;
+<a name="l00013"></a>00013         <a class="code" href="a00002.html#a209ca89a7b955bf74df8cb5a3eebe108" title="Taille du processus.">_size</a> = size;
+<a name="l00014"></a>00014         <a class="code" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed" title="Pointeur sur le processus précédent.">_prevProcessus</a> = NULL;
+<a name="l00015"></a>00015         <a class="code" href="a00002.html#a796722838a7528506393752f3ee9617d" title="Pointeur sur le prochain processus.">_nextProcessus</a> = NULL;
+<a name="l00016"></a>00016 };
+<a name="l00017"></a>00017 
+<a name="l00021"></a><a class="code" href="a00002.html#aef4e0e51009f71c12bca499c1955f85b">00021</a> <span class="keywordtype">void</span> <a class="code" href="a00002.html#aef4e0e51009f71c12bca499c1955f85b" title="Attribuer une nouvelle valeur au processus suivant.">Processus::setNextProcess</a>(<a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* nextProcess){
+<a name="l00022"></a>00022         <a class="code" href="a00002.html#a796722838a7528506393752f3ee9617d" title="Pointeur sur le prochain processus.">_nextProcessus</a> = nextProcess;
+<a name="l00023"></a>00023 };
+<a name="l00024"></a>00024 
+<a name="l00028"></a><a class="code" href="a00002.html#aefb317c1de924c3f96c1090f42e497eb">00028</a> <span class="keywordtype">void</span> <a class="code" href="a00002.html#aefb317c1de924c3f96c1090f42e497eb" title="Attribuer une nouvelle valeur au processus précédent.">Processus::setPrevProcess</a>(<a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* prevProcess){
+<a name="l00029"></a>00029         <a class="code" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed" title="Pointeur sur le processus précédent.">_prevProcessus</a> = prevProcess;
+<a name="l00030"></a>00030 };
+<a name="l00031"></a>00031 
+<a name="l00035"></a><a class="code" href="a00002.html#a1e5750504f67579b1ace0e87c80237f2">00035</a> <a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* <a class="code" href="a00002.html#a1e5750504f67579b1ace0e87c80237f2" title="Retourne l&amp;#39;adresse du processus suivant.">Processus::getNextProcess</a>(){
+<a name="l00036"></a>00036         <span class="keywordflow">return</span> <a class="code" href="a00002.html#a796722838a7528506393752f3ee9617d" title="Pointeur sur le prochain processus.">_nextProcessus</a>;
+<a name="l00037"></a>00037 };
+<a name="l00038"></a>00038 
+<a name="l00042"></a><a class="code" href="a00002.html#a693cfb69caf74db3132d5a72f7c1edfa">00042</a> <a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* <a class="code" href="a00002.html#a693cfb69caf74db3132d5a72f7c1edfa" title="Retourne l&amp;#39;adresse du processus précédent.">Processus::getPrevProcess</a>(){
+<a name="l00043"></a>00043         <span class="keywordflow">return</span> <a class="code" href="a00002.html#a80059499c9ef11fd16c5af1a2df8c3ed" title="Pointeur sur le processus précédent.">_prevProcessus</a>;
+<a name="l00044"></a>00044 };
+<a name="l00048"></a><a class="code" href="a00006.html#a68f9a6a9e752fd2944eacb271a04d4c5">00048</a> ostream&amp; <a class="code" href="a00006.html#a68f9a6a9e752fd2944eacb271a04d4c5" title="Surcharge de cout.">operator&lt;&lt; </a>(ostream &amp;out, <a class="code" href="a00002.html" title="Modèle de processus.">Processus</a>* pross){
+<a name="l00049"></a>00049         out &lt;&lt; setiosflags(ios::left) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39;_&#39;</span>);
+<a name="l00050"></a>00050         out &lt;&lt; <span class="stringliteral">&quot;| PID&quot;</span>;
+<a name="l00051"></a>00051         out &lt;&lt; setiosflags(ios::right) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39; &#39;</span>);
+<a name="l00052"></a>00052         out &lt;&lt; pross-&gt;<a class="code" href="a00002.html#a76a24d289fade008c3ff48aebfa049f4">getPID</a>() &lt;&lt; <span class="stringliteral">&quot; |&quot;</span>;
+<a name="l00053"></a>00053         out.unsetf(ios::right);
+<a name="l00054"></a>00054         out &lt;&lt; endl &lt;&lt; setiosflags(ios::left) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39;_&#39;</span>);
+<a name="l00055"></a>00055         out &lt;&lt; <span class="stringliteral">&quot;| Nom&quot;</span>;
+<a name="l00056"></a>00056         out &lt;&lt; setiosflags(ios::right) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39; &#39;</span>);
+<a name="l00057"></a>00057         out &lt;&lt; pross-&gt;<a class="code" href="a00002.html#aaefdeb69345996a92b53ed339d4df945">getName</a>() &lt;&lt; <span class="stringliteral">&quot; |&quot;</span>;
+<a name="l00058"></a>00058         out.unsetf(ios::right);
+<a name="l00059"></a>00059         out &lt;&lt; endl &lt;&lt; setiosflags(ios::left) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39;_&#39;</span>);
+<a name="l00060"></a>00060         out &lt;&lt; <span class="stringliteral">&quot;| Taille&quot;</span>;
+<a name="l00061"></a>00061         out &lt;&lt; setiosflags(ios::right) &lt;&lt; setw((<a class="code" href="a00012.html#adefda37779e32b69c4c14cad2082819f">UI_P_W</a> + <a class="code" href="a00012.html#aea4149eb9fbd9381e84f69e0d35ed1a7">UI_NUM_W</a>-2)/2) &lt;&lt; setfill (<span class="charliteral">&#39; &#39;</span>);
+<a name="l00062"></a>00062         out &lt;&lt; pross-&gt;<a class="code" href="a00002.html#afa9cc4552666c89af6e7f08d9624c98d">getSize</a>() &lt;&lt; <span class="stringliteral">&quot; |&quot;</span>;
+<a name="l00063"></a>00063         out.unsetf(ios::right);
+<a name="l00064"></a>00064         out &lt;&lt; endl;
+<a name="l00065"></a>00065         
+<a name="l00066"></a>00066         <span class="keywordflow">return</span> out;
+<a name="l00067"></a>00067 };
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Généré par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>
