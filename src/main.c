@@ -1,30 +1,42 @@
 #include "City.h"
+#include "Branch.h"
 #include "Search/SearchWidth.h"
 #include "Search/SearchDepth.h"
 
+#include "Search/SearchWidth_withAllReachedRoad.h"
+#include <stdio.h>
+
+
 int main (int argc, const char * argv[]) {
 	
-	//Instanciation des villes
-	pCity Arad = City_create("Arad");
-	pCity Zerind = City_create("Zerind");
-	pCity Oradea = City_create("Oradea");
-	pCity Siblu = City_create("Siblu");
-	pCity Timisoara = City_create("Timisoara");
-	pCity Lugoj = City_create("Lugoj");
-	pCity Mehadia = City_create("Mehadia");
-	pCity Dobreta = City_create("Dobreta");
-	pCity Craiova = City_create("Craiova");
-	pCity Pitesti = City_create("Pitesti");
-	pCity Fagaras = City_create("Fagaras");
-	pCity RimnicuViclea = City_create("RimnicuViclea");
-	pCity Bucarest = City_create("Bucarest");
-	pCity Giurgiu = City_create("Giurgiu");
-	pCity Urziceni = City_create("Urziceni");
-	pCity Hirsova = City_create("Hirsova");
-	pCity Eforie = City_create("Eforie");
-	pCity Vaslui = City_create("Vaslui");
-	pCity Lasi = City_create("Lasi");
-	pCity Neamt = City_create("Neamt");
+	/*Instanciation des villes*/
+	
+	//417 KM
+	pCity Arad = City_create("Arad", 46.180260, 21.323219); //CityName, x, y
+	pCity Zerind = City_create("Zerind", 46.623699, 21.516701);
+	pCity Oradea = City_create("Oradea", 47.052059, 21.938730);
+	pCity Siblu = City_create("Siblu", 44.416698, 44.416698);
+	pCity Timisoara = City_create("Timisoara", 45.753422, 21.223270);
+	pCity Lugoj = City_create("Lugoj", 45.684818, 21.905741);
+	pCity Mehadia = City_create("Mehadia", 44.900002, 22.366699);
+	pCity Dobreta = City_create("Dobreta", 44.474201, 23.957600);
+	pCity Craiova = City_create("Craiova", 44.318871, 23.801720);
+	pCity Pitesti = City_create("Pitesti", 44.850979, 24.879770);
+	pCity Fagaras = City_create("Fagaras", 45.842991, 24.976259);
+	pCity RimnicuViclea = City_create("RimnicuViclea", 45.946949, 24.980400);
+	pCity Bucarest = City_create("Bucarest", 44.434200, 26.102970);
+	pCity Giurgiu = City_create("Giurgiu", 43.895939, 25.966650);
+	pCity Urziceni = City_create("Urziceni", 44.718102, 26.645300);
+	pCity Hirsova = City_create("Hirsova", 44.694881, 27.956369);
+	pCity Eforie = City_create("Eforie", 44.066700, 28.633301);
+	pCity Vaslui = City_create("Vaslui", 46.638069, 27.732821);
+	pCity Lasi = City_create("Lasi", 45.946949, 24.980400);
+	pCity Neamt = City_create("Neamt", 46.989780, 26.450090);
+	
+	//sqrt( (x1 - x0)^2 + (y1 - y2)^2))
+	
+	printf("-- %f --\n", City_distBtw(Arad, Bucarest));
+	printf("-- %f --\n", City_distBtw(Zerind, Bucarest));
 	
 	//TODO: Insérer toutes les villes dans une collection de ville
 	//CityCollection_push(&CityCollection, City_create("Neamt"));
@@ -75,11 +87,16 @@ int main (int argc, const char * argv[]) {
 	
 	
 	//Lancement des algorithmes de recherche
-	printf("\nRecherche en largeur:\n");
-	FileData_printRoute(SearchWidth(Arad, Bucarest));
+	//printf("\nRecherche en largeur:\n");
+	//FileData_printRoute(SearchWidth(Bucarest, Arad));
 	
-	printf("\nRecherche en profondeur:\n");
+	//printf("\nRecherche en profondeur:\n");
+	//FileData_printRoute(SearchDepth(Arad, Bucarest));
+	
+	printf("\nRecherche en AStar:\n");
 	FileData_printRoute(SearchDepth(Arad, Bucarest));
+	
+	Search_defCon1(Arad,Bucarest);
 	
 	//Free all pCity
 	//City_destroy();

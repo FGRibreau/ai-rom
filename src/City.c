@@ -2,7 +2,7 @@
 #include "City.h"
 
 
-pCity City_create(char* name){
+pCity City_create(char* name, float lat, float lon){
 	pCity tmpCity = malloc(sizeof(City));
 	
 	tmpCity->name = malloc(sizeof(char) * strlen(name));
@@ -10,11 +10,20 @@ pCity City_create(char* name){
 	strcpy(tmpCity->name, name);
 	tmpCity->branch = NULL; // Ne pointe vers rien
 	
+	tmpCity->lat = lat;
+	tmpCity->lon = lon;
+	
 	return tmpCity;
 }
 	
 void City_destroy(pCity city){
 	//TODO Parcourir l'arbre et désalloué
+}
+
+
+//Todo: mettre en place un cache
+float City_distBtw(pCity cityA, pCity cityB){
+	return 1.852 * 60 * acos(sin(cityA->lat)* sin(cityB->lat) + cos(cityA->lat) * cos(cityB->lat) * cos(cityB->lon - cityB->lon));
 }
 
 bool City_branchLink(pCity cityA, pCity cityB, unsigned int dist){

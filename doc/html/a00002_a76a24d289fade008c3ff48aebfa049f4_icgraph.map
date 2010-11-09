@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$a00001.html#a990cf4f5426b1f2e67519f5e7c34fa63" title="Allocation de mémoire pour un nouveau procéssus." alt="" coords="461,5,629,35"/>
-<area shape="rect" id="node7" href="$a00001.html#a66f16f36a645fe71ca1d9d338e264785" title="Trouver un processus par son PID." alt="" coords="203,57,413,87"/>
-<area shape="rect" id="node13" href="$a00001.html#a6e0b69e37c41629d74f0d1272af518d6" title="Affiche la liste des processus alloués." alt="" coords="464,163,627,192"/>
-<area shape="rect" id="node16" href="$a00006.html#a68f9a6a9e752fd2944eacb271a04d4c5" title="Surcharge de cout." alt="" coords="257,161,359,191"/>
-<area shape="rect" id="node18" href="$a00001.html#a77a7d3c2471932d0f15c63bc05785732" title="Permet la sélection d&#39;un processus." alt="" coords="215,215,401,244"/>
-<area shape="rect" id="node5" href="$a00010.html#af3ed9c200de85b53c94cd18764b246a2" title="main" alt="" coords="679,109,732,139"/>
-<area shape="rect" id="node9" href="$a00001.html#a9dbb07d2081d0c7d1477b3ec2d6fb040" title="Désallocation mémoire." alt="" coords="464,109,627,139"/>
-</map>
