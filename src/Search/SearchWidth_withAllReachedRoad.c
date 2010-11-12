@@ -13,7 +13,7 @@ void Search_defCon1(pCity from, pCity to){
 		pFileData_city curCity = File_get(&fileOpen);
 
 		if(curCity->city->branch == NULL){
-			free(curCity);
+			_free(curCity);
 		} else {
 			pBranch cursor = curCity->city->branch;
 			
@@ -35,8 +35,8 @@ void Search_defCon1(pCity from, pCity to){
 	
 	Search_showFileReached(fileReached);
 	
-	free(fileOpen);
-	free(fileReached);
+	_free(fileOpen);
+	_free(fileReached);
 }
 
 void Search_showFileReached(pFile fileReached){

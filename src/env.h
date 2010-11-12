@@ -9,5 +9,10 @@
 #include "Vendor/bstrlib.h"
 typedef enum{false,true}bool;
 
+void* _malloc(size_t t);
+void _free(void* t);
+
+void _printMalloc();
+
 #endif
 

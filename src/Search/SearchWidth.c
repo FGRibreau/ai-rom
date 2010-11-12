@@ -13,7 +13,7 @@ pFileData_city SearchWidth(pCity from, pCity to){
 		pFileData_city curCity = File_get(&fileOpen);
 
 		if(curCity->city->branch == NULL){
-			free(curCity);
+			_free(curCity);
 		} else {
 			pBranch cursor = curCity->city->branch;
 			
@@ -37,7 +37,7 @@ pFileData_city SearchWidth(pCity from, pCity to){
 	} while (!File_isEmpty(fileOpen));
 	
 
-	free(fileOpen);
+	_free(fileOpen);
 	
 	//Release all "FileData_city_append"
 	

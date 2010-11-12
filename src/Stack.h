@@ -19,5 +19,8 @@ void*	Stack_pop		(pStack*);
 void	Stack_delete	(pStack*);
 bool	Stack_isEmpty	(pStack stack);
 int		Stack_size		(pStack stack);
+void	Stack_forEach	(pStack stack, void (*forEachCallback)(void*, pStack));
+void	Stack_free		(pStack stack);
+
 #endif
 

@@ -13,7 +13,7 @@ pFileData_city SearchDepth(pCity from, pCity to){
 		pFileData_city curCity = Stack_pop(&stackOpen);
 
 		if(curCity->city->branch == NULL){
-			free(curCity);
+			_free(curCity);
 		} else {
 			pBranch cursor = curCity->city->branch;
 			
@@ -37,7 +37,7 @@ pFileData_city SearchDepth(pCity from, pCity to){
 	} while (!Stack_isEmpty(stackOpen));
 	
 
-	free(stackOpen);
+	_free(stackOpen);
 	
 	//Release all "FileData_city_append"
 	

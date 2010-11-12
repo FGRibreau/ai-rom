@@ -1,11 +1,10 @@
-
 #include "City.h"
 
 
 pCity City_create(char* name, float lat, float lon){
-	pCity tmpCity = malloc(sizeof(City));
+	pCity tmpCity = _malloc(sizeof(City));
 	
-	tmpCity->name = malloc(sizeof(char) * strlen(name));
+	tmpCity->name = _malloc(sizeof(char) * strlen(name));
 	
 	strcpy(tmpCity->name, name);
 	tmpCity->branch = NULL; // Ne pointe vers rien
@@ -33,8 +32,8 @@ bool City_branchLink(pCity cityA, pCity cityB, unsigned int dist){
 		return false;
 	}
 
-	pBranch Branch1 = malloc(sizeof(Branch))	//CityA.branch
-	,		Branch2 = malloc(sizeof(Branch));	//CityB.branch
+	pBranch Branch1 = Branch_create()	//CityA.branch
+	,		Branch2 = Branch_create();	//CityB.branch
 	
 	//Configure les branches
 	Branch1->city = cityB;
@@ -52,7 +51,7 @@ bool City_branchAdd(pCity city, pBranch branch){
 	if(city->branch == NULL){
 		city->branch = branch;	
 	} else {
-		pBranch cursor = branch_walkToEnd(city->branch);
+		pBranch cursor = Branch_walkToEnd(city->branch);
 		cursor->next = branch;
 	}
 	
@@ -66,13 +65,19 @@ bool City_branchExist(pCity city, pCity cityInner){
 		return false;
 	}
 	
-	return branch_walkToCity(city->branch, cityInner) != NULL;
+	return Branch_walkToCity(city->branch, cityInner) != NULL;
+}
+
+
+pBranch Branch_create(){
+	//TODO: Enregistrer tous les pointeurs créé
+	return _malloc(sizeof(Branch));
 }
 
 //Parcoure une liste chainée Branch jusqu'à trouvé City
 //return NULL si non trouvé
 //return pBranch si city trouvé à cet endroit précis
-pBranch branch_walkToCity(pBranch branch, pCity city){
+pBranch Branch_walkToCity(pBranch branch, pCity city){
 	pBranch cursor = branch;
 	
 	do {
@@ -85,7 +90,7 @@ pBranch branch_walkToCity(pBranch branch, pCity city){
 }
 
 //Parcoure une liste chainée Branch jusqu'à la fin
-pBranch branch_walkToEnd(pBranch branch){
+pBranch Branch_walkToEnd(pBranch branch){
 	pBranch cursor = branch;
 	
 	while(cursor->next){
@@ -95,9 +100,10 @@ pBranch branch_walkToEnd(pBranch branch){
 	return cursor;
 }
 
-
-
-
+//
+void Branch_free(){
+	//Boucler sur le tableau de pointeur pBranch
+}
 
 
 

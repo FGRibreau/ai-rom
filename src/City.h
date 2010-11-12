@@ -1,9 +1,7 @@
 
 #ifndef _CITY_h
 #define _CITY_h
-
 #include "env.h"
-#include <math.h>
 
 typedef struct City* pCity;
 
@@ -47,9 +45,10 @@ bool	City_branchExist(pCity city, pCity cityInner);
 float	City_distBtw(pCity cityA, pCity B);
 /* Méthodes Branch */
 
-
-pBranch branch_walkToCity(pBranch branch, pCity city);
-pBranch branch_walkToEnd(pBranch branch);
+pBranch Branch_create();
+pBranch Branch_walkToCity(pBranch branch, pCity city);
+pBranch Branch_walkToEnd(pBranch branch);
+void	Branch_free();
 
 
 #endif

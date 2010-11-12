@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "env.h"
 #include "City.h"
 #include "Branch.h"
 #include "Search/SearchWidth.h"
@@ -11,9 +12,11 @@
 
 
 
+void callb(char* index, void* data){
+	printf("Index: %s\n", index);
+}
+
 int main (int argc, const char * argv[]) {
-	
-	
 	
 	Map_init();//Initialise le Hash (une carte des villes accessibles via leurs noms)
 
@@ -38,7 +41,6 @@ int main (int argc, const char * argv[]) {
 	Map_set("Vaslui",		City_create("Vaslui", 46.638069, 27.732821));
 	Map_set("Lasi",			City_create("Lasi", 45.946949, 24.980400));
 	Map_set("Neamt",		City_create("Neamt", 46.989780, 26.450090));
-
 	
 	printf("-- %f --\n", City_distBtw(Map_get("Lasi"), Map_get("Bucarest")));
 	printf("-- %f --\n", City_distBtw(Map_get("Vaslui"), Map_get("Bucarest")));
@@ -88,12 +90,11 @@ int main (int argc, const char * argv[]) {
 	
 	
 	//Lancement des algorithmes de recherche
-	//printf("\nRecherche en largeur:\n");
-	//FileData_printRoute(SearchWidth(Bucarest, Arad));
+	printf("\nRecherche en largeur:\n");
+	FileData_printRoute(SearchWidth(Map_get("Arad"), Map_get("Bucarest")));
 	
-	//printf("\nRecherche en profondeur:\n");
-	//FileData_printRoute(SearchDepth(Arad, Bucarest));
-	
+	printf("\nRecherche en profondeur:\n");
+	FileData_printRoute(SearchDepth(Map_get("Arad"), Map_get("Bucarest")));
 	
 	printf("\nRecherche via Greedy:\n");
 	FileData_printRoute(SearchGreedy(Map_get("Arad"), Map_get("Bucarest")));
@@ -102,10 +103,15 @@ int main (int argc, const char * argv[]) {
 	FileData_printRoute(SearchDepth(Map_get("Arad"), Map_get("Bucarest")));
 
 
-	//Search_defCon1(Arad,Bucarest);
+	Search_defCon1(Map_get("Arad"), Map_get("Bucarest"));
 	
-	//Free all pCity
-	//City_destroy();
+	//_free all pCity
+	//Détruire tout l'arbre
+	
+	Branch_free();	//Supprime les branchs
+	Map_free();		//Libération de la mémoire
+	
+	_printMalloc();
 	
 	return 0;
 }

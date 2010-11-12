@@ -31,11 +31,11 @@ void Hash_set(pHash* hash, char* index, void* pData){
 	}
 	
 	//Creation de la nouvelle node
-	pHash nHash = malloc(sizeof(Hash));
+	pHash nHash = _malloc(sizeof(Hash));
 	
 	nHash->data = pData;
 	
-	nHash->index = malloc(sizeof(char) * strlen(index));
+	nHash->index = _malloc(sizeof(char) * strlen(index));
 	strcpy(nHash->index, index);
 	
 	if(*(hash) != NULL){
@@ -45,4 +45,20 @@ void Hash_set(pHash* hash, char* index, void* pData){
 	nHash->next = NULL;
 	
 	*hash = nHash;
+}
+
+void Hash_forEach(pHash hash, void (*forEachCallback)(char*, void*, pHash hash)){
+	//Boucle sur la liste chainée + comparaison de index
+	do{	
+		(*forEachCallback)(hash->index, hash->data, hash);
+	}while((hash = hash->prev));
+}
+
+void Hash_free(pHash hash){
+	void __callback(char* index, void* data, pHash hash){
+		_free(data);//Libération du data
+		_free(hash);//Libération du hash
+	}
+	
+	Hash_forEach(hash, __callback);
 }

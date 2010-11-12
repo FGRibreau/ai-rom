@@ -2,7 +2,7 @@
 #include "FileData_city.h"
 
 pFileData_city FileData_city_create(pFileData_city parent, pCity city, int dist, int depth){
-	pFileData_city obj = malloc(sizeof(FileData_city));
+	pFileData_city obj = _malloc(sizeof(FileData_city));
 	obj->parent = parent;
 	obj->dist = dist;
 	obj->city = city;
@@ -11,13 +11,7 @@ pFileData_city FileData_city_create(pFileData_city parent, pCity city, int dist,
 }
 
 pFileData_city FileData_city_append(pFileData_city route, pBranch branch){
-	pFileData_city obj = malloc(sizeof(FileData_city));
-	
-	obj->parent = route;
-	obj->dist = route->dist + branch->dist;
-	obj->city = branch->city;
-	obj->depth = route->depth+1;
-	return obj;
+	return FileData_city_create(route, branch->city, route->dist + branch->dist, route->depth+1);
 }
 
 bool FileData_cityAlreadyExist(pFileData_city route, pCity city){

@@ -12,7 +12,7 @@ void Stack_push(pStack* stack, void *data){
 		pStack p_p = *stack;
 		pStack p_l = NULL;
 		
-		p_l = malloc (sizeof (*p_l));
+		p_l = _malloc (sizeof (*p_l));
 		if (p_l != NULL)
 		{
 			p_l->data = data;
@@ -43,7 +43,7 @@ void* Stack_pop (pStack* stack){
 		if (p_p != NULL)
 			p_p->next = NULL;
 		ret = p_l->data;
-		free (p_l);
+		_free (p_l);
 		p_l = NULL;
 		*stack = p_p;
 	}
@@ -75,5 +75,21 @@ int Stack_size(pStack stack){
 	}
 	
 	return i;
+}
+
+void Stack_forEach(pStack stack, void (*forEachCallback)(void*, pStack)){
+	//Boucle sur la liste chainée + comparaison de index
+	do{	
+		(*forEachCallback)(stack->data, stack);
+	}while((stack = stack->prev));
+}
+
+void Stack_free(pStack stack){
+	void __callback(void* data, pStack stack){
+		_free(data);//Libération du data
+		_free(stack);//Libération du hash
+	}
+	
+	Stack_forEach(stack, __callback);
 }
 

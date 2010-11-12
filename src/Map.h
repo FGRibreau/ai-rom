@@ -11,5 +11,5 @@ pHash _Map;
 void	Map_init();
 pCity	Map_get(char* index);
 void	Map_set(char* index, pCity city);
-
+void	Map_free();
 #endif

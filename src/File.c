@@ -18,7 +18,7 @@ void File_push(pFile* file, void* data){
 		/* (2) */
 		p_l = *file;
 		/* (3) */
-		p_p = malloc (sizeof (*p_p));
+		p_p = _malloc (sizeof (*p_p));
 		if (p_p != NULL)
 		{
 			p_p->data = data;
@@ -93,7 +93,7 @@ void* File_get(pFile* file)
 			p_p = p_l->prev;
 		ret = p_l->data;
 		/* (4) */
-		free (p_l);
+		_free (p_l);
 		p_l = NULL;
 		/* (5) */
 		if (p_p != NULL)
