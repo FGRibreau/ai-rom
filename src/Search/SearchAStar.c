@@ -2,45 +2,33 @@
 #include "SearchAStar.h"
 
 pFileData_city SearchAStar(pCity from, pCity to){
-	//Liste ouverte (route non trouvée)
-	pFile fileOpen = File_create();
 	
-	//Meilleure route
-	pFileData_city bestRoad = NULL;
+	pFileData_city road = FileData_city_create(NULL, from, 0, 0); // Pas forcement optimal
 	
-	File_push(&fileOpen, FileData_city_create(NULL, from, 0, 0));
+	pFileData_city curCity = road;
 	
 	do {	
-		pFileData_city curCity = File_get(&fileOpen);
 		
-		if(curCity->city->branch == NULL){
-			free(curCity);
-		} else {
-			pBranch cursor = curCity->city->branch;
+		pBranch neighbour = curCity->city->branch
+		,		bestCity = neighbour;//Ville voisine
+		
+		float	distBest = 99999999999
+		,		distToDest = 0;
+		
+		do {//Parcours les enfants de curCity->city
 			
-			do {
-				if(bestRoad == NULL || (bestRoad != NULL && (curCity->dist + cursor->dist) < bestRoad->dist)){
-					
-					if(cursor->city == to){
-						
-						bestRoad = FileData_city_append(curCity, cursor);
-						
-					} else if(!FileData_cityAlreadyExist(curCity, cursor->city)){
-						
-						File_push(&fileOpen, FileData_city_append(curCity, cursor));
-						
-					}
-					
-				}
-			} while (cursor = cursor->next);
-		}
+			distToDest = City_distBtw(neighbour->city, to);
 		
-	} while (!File_isEmpty(fileOpen));
+			if((distToDest + neighbour->dist)  < distBest){
+				bestCity = neighbour;
+				distBest = distToDest+ neighbour->dist;
+			}
+			
+		} while (neighbour = neighbour->next);//Parcour la liste chainée des villes voisines de City
+		
+		curCity = road = FileData_city_append(road, bestCity);
+		
+	} while (curCity->city != to);
 	
-	
-	free(fileOpen);
-	
-	//Release all "FileData_city_append"
-	
-	return bestRoad;
+	return road;
 }

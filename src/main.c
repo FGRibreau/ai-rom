@@ -98,9 +98,8 @@ int main (int argc, const char * argv[]) {
 	printf("\nRecherche via Greedy:\n");
 	FileData_printRoute(SearchGreedy(Map_get("Arad"), Map_get("Bucarest")));
 	
-	//printf("\nRecherche en AStar:\n");
-	//FileData_printRoute(SearchDepth(Map_get("Arad"), Map_get("Bucarest")));
-	//FileData_printRoute(SearchGreedy(Map_get("Arad"), Map_get("Bucarest")));
+	printf("\nRecherche en AStar:\n");
+	FileData_printRoute(SearchDepth(Map_get("Arad"), Map_get("Bucarest")));
 
 
 	//Search_defCon1(Arad,Bucarest);
