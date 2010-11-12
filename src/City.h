@@ -2,6 +2,7 @@
 #ifndef _CITY_h
 #define _CITY_h
 #include "env.h"
+#include "Stack.h"
 
 typedef struct City* pCity;
 
@@ -36,6 +37,7 @@ struct City{
 //extern
 
 
+
 /* Methodes City */
 pCity	City_create(char* name, float lat, float lon);
 void	City_destroy();
@@ -45,6 +47,7 @@ bool	City_branchExist(pCity city, pCity cityInner);
 float	City_distBtw(pCity cityA, pCity B);
 /* Méthodes Branch */
 
+pStack	__Branch_malloc;
 pBranch Branch_create();
 pBranch Branch_walkToCity(pBranch branch, pCity city);
 pBranch Branch_walkToEnd(pBranch branch);

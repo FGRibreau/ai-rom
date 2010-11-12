@@ -14,7 +14,7 @@ struct Stack
 } Stack;
 
 pStack	Stack_create	(void);
-void	Stack_push		(pStack*, void*);
+void*	Stack_push		(pStack*, void*);
 void*	Stack_pop		(pStack*);
 void	Stack_delete	(pStack*);
 bool	Stack_isEmpty	(pStack stack);

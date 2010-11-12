@@ -1,20 +1,14 @@
 #include <stdio.h>
 #include "env.h"
+#include "Map.h"
 #include "City.h"
 #include "Branch.h"
 #include "Search/SearchWidth.h"
+#include "Search/SearchWidth_withAllReachedRoad.h"
 #include "Search/SearchDepth.h"
 #include "Search/SearchGreedy.h"
+#include "Search/SearchAStar.h"
 
-#include "Search/SearchWidth_withAllReachedRoad.h"
-
-#include "Map.h"
-
-
-
-void callb(char* index, void* data){
-	printf("Index: %s\n", index);
-}
 
 int main (int argc, const char * argv[]) {
 	
@@ -24,7 +18,7 @@ int main (int argc, const char * argv[]) {
 	Map_set("Arad",			City_create("Arad", 46.180260, 21.323219));
 	Map_set("Zerind",		City_create("Zerind", 46.623699, 21.516701));
 	Map_set("Oradea",		City_create("Oradea", 47.052059, 21.938730));
-	Map_set("Siblu",		City_create("Siblu", 44.416698, 44.416698));
+	Map_set("Sibiu",		City_create("Sibiu", 44.416698, 44.416698));
 	Map_set("Timisoara",	City_create("Timisoara", 45.753422, 21.223270));
 	Map_set("Lugoj",		City_create("Lugoj", 45.684818, 21.905741));
 	Map_set("Mehadia",		City_create("Mehadia", 44.900002, 22.366699));
@@ -42,17 +36,16 @@ int main (int argc, const char * argv[]) {
 	Map_set("Lasi",			City_create("Lasi", 45.946949, 24.980400));
 	Map_set("Neamt",		City_create("Neamt", 46.989780, 26.450090));
 	
-	printf("-- %f --\n", City_distBtw(Map_get("Lasi"), Map_get("Bucarest")));
-	printf("-- %f --\n", City_distBtw(Map_get("Vaslui"), Map_get("Bucarest")));
+	
 	
 	//Création des liens entre les villes
 	City_branchLink(Map_get("Arad"), Map_get("Zerind"), 75);
-	City_branchLink(Map_get("Arad"), Map_get("Siblu"), 140);
+	City_branchLink(Map_get("Arad"), Map_get("Sibiu"), 140);
 	City_branchLink(Map_get("Arad"), Map_get("Timisoara"), 118);
 	
 	City_branchLink(Map_get("Zerind"), Map_get("Oradea"), 71);
 	
-	City_branchLink(Map_get("Oradea"), Map_get("Siblu"), 151);
+	City_branchLink(Map_get("Oradea"), Map_get("Sibiu"), 151);
 	
 	City_branchLink(Map_get("Timisoara"), Map_get("Lugoj"), 111);
 	
@@ -65,12 +58,12 @@ int main (int argc, const char * argv[]) {
 	City_branchLink(Map_get("Craiova"), Map_get("Pitesti"), 138);
 	City_branchLink(Map_get("Craiova"), Map_get("RimnicuViclea"), 146);
 	
-	City_branchLink(Map_get("RimnicuViclea"), Map_get("Siblu"), 80);
+	City_branchLink(Map_get("RimnicuViclea"), Map_get("Sibiu"), 80);
 	City_branchLink(Map_get("RimnicuViclea"), Map_get("Pitesti"), 97);
 	
-	//City_branchLink(Map_get("Siblu"), Map_get("Oradea"), 151);//Cette ligne génère une erreur car ce lien existe déjà
+	//City_branchLink(Map_get("Sibiu"), Map_get("Oradea"), 151);//Cette ligne génère une erreur car ce lien existe déjà
 	
-	City_branchLink(Map_get("Siblu"), Map_get("Fagaras"), 99);
+	City_branchLink(Map_get("Sibiu"), Map_get("Fagaras"), 99);
 	
 	City_branchLink(Map_get("Fagaras"), Map_get("Bucarest"), 211);
 	City_branchLink(Map_get("Pitesti"), Map_get("Bucarest"), 101);
@@ -100,17 +93,19 @@ int main (int argc, const char * argv[]) {
 	FileData_printRoute(SearchGreedy(Map_get("Arad"), Map_get("Bucarest")));
 	
 	printf("\nRecherche en AStar:\n");
-	FileData_printRoute(SearchDepth(Map_get("Arad"), Map_get("Bucarest")));
+	FileData_printRoute(SearchAStar(Map_get("Arad"), Map_get("Bucarest")));
+	printf("\n");
 
+	/*
 
 	Search_defCon1(Map_get("Arad"), Map_get("Bucarest"));
-	
+	*/
 	//_free all pCity
 	//Détruire tout l'arbre
 	
 	Branch_free();	//Supprime les branchs
 	Map_free();		//Libération de la mémoire
-	
+	FileData_cityFree();
 	_printMalloc();
 	
 	return 0;

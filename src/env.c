@@ -45,6 +45,11 @@ void _printMalloc(){
 }
 
 void _free(void* t){
-	_env_free++;
-	free(t);
+	if(t == NULL){
+		printf("\n\nNULL !\n\n");
+	} else {
+		_env_free++;
+		free(t);
+	}
+	
 }

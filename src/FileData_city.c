@@ -1,13 +1,18 @@
 
 #include "FileData_city.h"
 
+
 pFileData_city FileData_city_create(pFileData_city parent, pCity city, int dist, int depth){
-	pFileData_city obj = _malloc(sizeof(FileData_city));
+	pFileData_city obj = Stack_push(&__FileData_city_malloc, _malloc(sizeof(FileData_city)));
 	obj->parent = parent;
 	obj->dist = dist;
 	obj->city = city;
 	obj->depth = depth;
 	return obj;
+}
+
+void FileData_cityFree(){
+	Stack_free(__FileData_city_malloc);
 }
 
 pFileData_city FileData_city_append(pFileData_city route, pBranch branch){

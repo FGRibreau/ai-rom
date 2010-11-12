@@ -6,7 +6,7 @@ pStack Stack_create(void){
 }
 
 //Ajouter une donnée à la pile
-void Stack_push(pStack* stack, void *data){
+void* Stack_push(pStack* stack, void *data){
 	
 	if (stack != NULL){
 		pStack p_p = *stack;
@@ -28,7 +28,8 @@ void Stack_push(pStack* stack, void *data){
 			exit (EXIT_FAILURE);
 		}
 	}
-	return;
+	
+	return data;
 }
 
 
@@ -77,7 +78,11 @@ int Stack_size(pStack stack){
 	return i;
 }
 
-void Stack_forEach(pStack stack, void (*forEachCallback)(void*, pStack)){
+void Stack_forEach(pStack stack, void (*forEachCallback)(void* data, pStack stack)){
+	if(stack == NULL){
+		return;
+	}
+	
 	//Boucle sur la liste chainée + comparaison de index
 	do{	
 		(*forEachCallback)(stack->data, stack);

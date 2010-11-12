@@ -56,8 +56,9 @@ void Hash_forEach(pHash hash, void (*forEachCallback)(char*, void*, pHash hash))
 
 void Hash_free(pHash hash){
 	void __callback(char* index, void* data, pHash hash){
-		_free(data);//Libération du data
-		_free(hash);//Libération du hash
+		_free(data);		//Libération du data
+		_free(hash->index);	//Libération de la chaine de caractère "index"
+		_free(hash);		//Libération du hash (un élément de la liste chainée)
 	}
 	
 	Hash_forEach(hash, __callback);

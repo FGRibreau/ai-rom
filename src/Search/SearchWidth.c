@@ -36,7 +36,6 @@ pFileData_city SearchWidth(pCity from, pCity to){
 		
 	} while (!File_isEmpty(fileOpen));
 	
-
 	_free(fileOpen);
 	
 	//Release all "FileData_city_append"

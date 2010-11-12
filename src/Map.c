@@ -16,15 +16,9 @@ void Map_set(char* index, pCity city){
 
 void Map_free(){
 	void __callback(char* index, void* data, pHash hash){
-		//pCity->name
 		_free(((pCity)data)->name);
-		
-		//pCity
-		_free(data);
-		
-		//Element de la liste chainé _Map
-		_free(hash);
 	}
 	
 	Hash_forEach(_Map, __callback);
+	Hash_free(_Map);
 }

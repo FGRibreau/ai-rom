@@ -14,10 +14,6 @@ pCity City_create(char* name, float lat, float lon){
 	
 	return tmpCity;
 }
-	
-void City_destroy(pCity city){
-	//TODO Parcourir l'arbre et désalloué
-}
 
 
 //Todo: mettre en place un cache
@@ -70,8 +66,10 @@ bool City_branchExist(pCity city, pCity cityInner){
 
 
 pBranch Branch_create(){
-	//TODO: Enregistrer tous les pointeurs créé
-	return _malloc(sizeof(Branch));
+	//Créer le pointeur
+	//L'ajoute à un stack (pour ensuite être supprimé via Branch_free();
+	//Le stack retourne ce même pointeur
+	return Stack_push(&__Branch_malloc, _malloc(sizeof(Branch)));
 }
 
 //Parcoure une liste chainée Branch jusqu'à trouvé City
@@ -100,12 +98,10 @@ pBranch Branch_walkToEnd(pBranch branch){
 	return cursor;
 }
 
-//
+//Libère de la mémoire toutes les branches (route entre ville) créées
 void Branch_free(){
-	//Boucler sur le tableau de pointeur pBranch
+	Stack_free(__Branch_malloc);
 }
-
-
 
 
 

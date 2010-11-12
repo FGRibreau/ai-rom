@@ -14,6 +14,8 @@ struct FileData_city{
 	int		depth;					//profondeur
 }FileData_city;
 
+pStack	__FileData_city_malloc;		//Stack qui contient l'intégralité des pointeurs générés
+
 
 pFileData_city FileData_city_create(pFileData_city parent, pCity city, int dist, int depth);//Constructeur
 
@@ -21,6 +23,8 @@ pFileData_city FileData_city_create(pFileData_city parent, pCity city, int dist,
 pFileData_city FileData_city_append(pFileData_city route, pBranch branch);
 
 bool FileData_cityAlreadyExist(pFileData_city route, pCity city);
-
+void FileData_cityFree();
 void FileData_printRoute(pFileData_city route);
+
+
 #endif
