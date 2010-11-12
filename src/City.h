@@ -3,7 +3,7 @@
 #define _CITY_h
 
 #include "env.h"
-
+#include <math.h>
 
 typedef struct City* pCity;
 

@@ -3,6 +3,7 @@
 #include "Branch.h"
 #include "Search/SearchWidth.h"
 #include "Search/SearchDepth.h"
+#include "Search/SearchGreedy.h"
 
 #include "Search/SearchWidth_withAllReachedRoad.h"
 
@@ -94,8 +95,10 @@ int main (int argc, const char * argv[]) {
 	//FileData_printRoute(SearchDepth(Arad, Bucarest));
 	
 	printf("\nRecherche en AStar:\n");
-	FileData_printRoute(SearchDepth(Map_get("Arad"), Map_get("Bucarest")));
-	
+	//FileData_printRoute(SearchDepth(Map_get("Arad"), Map_get("Bucarest")));
+	//FileData_printRoute(SearchGreedy(Map_get("Arad"), Map_get("Bucarest")));
+
+
 	//Search_defCon1(Arad,Bucarest);
 	
 	//Free all pCity
