@@ -15,7 +15,7 @@ pFileData_city SearchAStar(pCity from, pCity to){
 		float	distBest = 99999999999
 		,		distToDest = 0;
 		
-		printf("[ ");
+		//printf("[ ");
 		do {//Parcours les enfants de curCity->city
 			
 			distToDest = City_distBtw(neighbour->city, to);
@@ -27,10 +27,10 @@ pFileData_city SearchAStar(pCity from, pCity to){
 			}
 			
 			
-			printf("%s %.4f\t\t", neighbour->city->name, distToDest+ neighbour->dist);
+			//printf("%s %.4f\t\t", neighbour->city->name, distToDest+ neighbour->dist);
 			
 		} while (neighbour = neighbour->next);//Parcour la liste chainée des villes voisines de City
-		printf("]\n");
+		//printf("]\n");
 		curCity = road = FileData_city_append(road, bestCity);
 		
 	} while (curCity->city != to);

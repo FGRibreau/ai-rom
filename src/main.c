@@ -96,16 +96,15 @@ int main (int argc, const char * argv[]) {
 	FileData_printRoute(SearchAStar(Map_get("Arad"), Map_get("Bucarest")));
 	printf("\n");
 
-	/*
-
-	Search_defCon1(Map_get("Arad"), Map_get("Bucarest"));
-	*/
-	//_free all pCity
-	//Détruire tout l'arbre
 	
-	Branch_free();	//Supprime les branchs
-	Map_free();		//Libération de la mémoire
-	FileData_cityFree();
+	//Search_defCon1(Map_get("Arad"), Map_get("Bucarest"));
+	
+	
+	Branch_free();		//Libères les branchs
+	Map_free();			//Libères les villes
+	FileData_cityFree();//Libères les routes (trouvées par les algorithmes)
+	
+	//Affiche le résultat des mallocs/frees
 	_printMalloc();
 	
 	return 0;

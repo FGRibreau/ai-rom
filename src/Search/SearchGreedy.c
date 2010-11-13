@@ -23,7 +23,7 @@ pFileData_city SearchGreedy(pCity from, pCity to){
 
 		} while (neighbour = neighbour->next);//Parcour la liste chainée des villes voisines de City
 		
-		printf("%s\n", bestCity->city->name);
+		//printf("%s\n", bestCity->city->name);
 		curCity = road = FileData_city_append(road, bestCity);
 
 	} while (curCity->city != to);

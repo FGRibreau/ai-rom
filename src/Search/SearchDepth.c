@@ -37,7 +37,6 @@ pFileData_city SearchDepth(pCity from, pCity to){
 	} while (!Stack_isEmpty(stackOpen));
 	
 
-	_free(stackOpen);
 	
 	//Release all "FileData_city_append"
 	
