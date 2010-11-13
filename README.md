@@ -1,1 +1,3 @@
-Projet IA - Rom
+Projet IA - Roumanie
+
+V1.1
