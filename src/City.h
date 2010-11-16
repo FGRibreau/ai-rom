@@ -10,7 +10,7 @@ typedef struct Branch* pBranch;
 
 struct Branch{
 	pCity city;				/* Pointeur sur City */
-	unsigned int dist;		/* Distance */
+	float dist;		/* Distance */
 	pBranch next;			/* Next */
 } Branch;
 

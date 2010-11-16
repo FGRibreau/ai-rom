@@ -93,7 +93,7 @@ int main (int argc, const char * argv[]) {
 	FileData_printRoute(SearchGreedy(Map_get("Arad"), Map_get("Bucarest")));
 	
 	printf("\nRecherche en AStar:\n");
-	FileData_printRoute(SearchAStar(Map_get("Arad"), Map_get("Bucarest")));
+	//FileData_printRoute(SearchAStar(Map_get("Arad"), Map_get("Bucarest")));
 	printf("\n");
 
 	

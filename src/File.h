@@ -16,10 +16,6 @@ struct File{
 pFile File_create();
 void File_push(pFile* file, void* data);
 bool File_isEmpty(pFile file);
-void File_first(pFile* file);
-void File_prev(pFile* file);
-void File_last(pFile* file);
-void File_next(pFile* file);
 void* File_get(pFile* file);
 int File_size(pFile file);
 #endif

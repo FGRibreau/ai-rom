@@ -13,14 +13,14 @@ void* Hash_get(pHash hash, char* index){
 	if(hash == NULL){
 		return NULL;
 	}
-	
+
 	//Boucle sur la liste chainée + comparaison de index
 	do{	
 		//Comparaison des index
 		if(hash->index != NULL && strcmp(hash->index, index) == 0){
 			return hash->data;
 		}
-	}while((hash = hash->prev));
+	}while(hash = hash->prev);
 	
 	return NULL;
 }

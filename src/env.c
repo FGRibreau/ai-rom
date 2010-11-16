@@ -4,7 +4,13 @@ int _env_malloc = 0, _env_free = 0;
 
 void* _malloc(size_t t){
 	_env_malloc++;
-	return malloc(t);
+	void* m = malloc(t);
+	if(m == NULL){
+		printf("Not enough memory");
+		exit(0);
+	}
+	
+	return m;
 }
 
 void _printMalloc(){

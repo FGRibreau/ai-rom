@@ -9,51 +9,22 @@ pFile File_create(){
 
 //Ajout un élément dans la file
 void File_push(pFile* file, void* data){
-	if (file != NULL)
-	{
-		pFile p_l = NULL;
-		pFile p_p = NULL;
-		
-		File_first(file);
-		/* (2) */
-		p_l = *file;
-		/* (3) */
-		p_p = _malloc (sizeof (*p_p));
-		if (p_p != NULL)
-		{
-			p_p->data = data;
-			/* (4) */
-			p_p->next = p_l;
-			p_p->prev = NULL;
-			if (p_l != NULL)
-				p_l->prev = p_p;
-			/* (5) */
-			*file = p_p;
-		}
-		else
-		{
-			fprintf (stderr, "Memoire insuffisante\n");
-			exit (EXIT_FAILURE);
-		}
-	}
-	return;
-}
 	
-
-void File_first(pFile* file){
-	if (file != NULL && *file != NULL){
-		while ((*file)->prev != NULL)
-			File_prev(file);
+	pFile node = _malloc (sizeof (File))
+		, OldFirstEl = *file;
+	
+	node->data = data;
+	node->prev = NULL;
+	node->next = NULL;
+	
+	if(OldFirstEl != NULL){
+		OldFirstEl->prev = node;
+		node->next = OldFirstEl;
 	}
+	
+	*file = node;
 	return;
 }
-
-void File_prev(pFile* file){
-	if (file != NULL && *file != NULL)
-		*file = (*file)->prev;
-	return;
-}
-
 
 bool File_isEmpty(pFile file){
 	return file == NULL;
@@ -76,44 +47,35 @@ int File_size(pFile file){
 }
 
 /* Retourne un élment de la file */
-void* File_get(pFile* file)
-{
-	void *ret = NULL;
+void* File_get(pFile* file){
+	//Aller à la fin
 	
-	if (file != NULL && *file != NULL)
-	{
-		pFile p_l = NULL;
-		pFile p_p = NULL;
-		
-		/* (2) */
-		File_last(file);
-		p_l = *file;
-		/* (3) */
-		if (p_l != NULL)
-			p_p = p_l->prev;
-		ret = p_l->data;
-		/* (4) */
-		_free (p_l);
-		p_l = NULL;
-		/* (5) */
-		if (p_p != NULL)
-			p_p->next = NULL;
-		*file = p_p;
+	pFile cursor = *file
+		, newLastEl = NULL;
+	
+	void* ret = NULL;
+	
+	while(cursor->next != NULL){
+		cursor = cursor->next;
 	}
-	return (ret);
-}
-
-void File_last(pFile* file){
-	if (file != NULL && *file != NULL){
-		while ((*file)->next != NULL)
-			File_next(file);
+	
+	
+	if(cursor != NULL && cursor->prev != NULL){
+		newLastEl = cursor->prev;
 	}
-	return;
-}
-
-void File_next(pFile* file){
-	if (file != NULL && *file != NULL)
-		*file = (*file)->next;
-	return;
+	
+	ret = cursor->data;
+	_free(cursor);
+	cursor = NULL;
+	
+	if(newLastEl != NULL){
+		newLastEl->next = NULL;
+	} else {
+		*file = NULL;
+	}
+						
+	//*file = newLastEl; // == [ NULL || pFile ]
+	
+	return ret;
 }
 
