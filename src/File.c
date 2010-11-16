@@ -48,8 +48,6 @@ int File_size(pFile file){
 
 /* Retourne un élment de la file */
 void* File_get(pFile* file){
-	//Aller à la fin
-	
 	pFile cursor = *file
 		, newLastEl = NULL;
 	
@@ -58,7 +56,6 @@ void* File_get(pFile* file){
 	while(cursor->next != NULL){
 		cursor = cursor->next;
 	}
-	
 	
 	if(cursor != NULL && cursor->prev != NULL){
 		newLastEl = cursor->prev;
@@ -73,9 +70,7 @@ void* File_get(pFile* file){
 	} else {
 		*file = NULL;
 	}
-						
-	//*file = newLastEl; // == [ NULL || pFile ]
-	
+
 	return ret;
 }
 

@@ -25,8 +25,7 @@ pFileData_city SearchWidth(pCity from, pCity to){
 						bestRoad = FileData_city_append(curCity, cursor);
 
 					} else if(!FileData_cityAlreadyExist(curCity, cursor->city)){
-						pFileData_city d = FileData_city_append(curCity, cursor);
-						File_push(&fileOpen, d);
+						File_push(&fileOpen, FileData_city_append(curCity, cursor));
 						
 						//FileData_printRoute(d);
 					}
@@ -36,9 +35,6 @@ pFileData_city SearchWidth(pCity from, pCity to){
 		}
 		
 	} while (!File_isEmpty(fileOpen));
-	
-	
-	//Release all "FileData_city_append"
-	
+
 	return bestRoad;
 }
