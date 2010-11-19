@@ -19,7 +19,6 @@ struct FileData_city{
 pStack	__FileData_city_malloc;		//Stack qui contient l'intégralité des pointeurs générés
 
 
-//pFileData_city FileData_city_create(pFileData_city parent, pCity city, int dist, int depth);//Constructeur
 pFileData_city FileData_city_create(pFileData_city parent, pCity city, int dist, int heuristic, int depth);
 
 //Ajout une ville à la suite d'une route de ville et retourne l'en-tête

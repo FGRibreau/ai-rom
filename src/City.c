@@ -2,7 +2,7 @@
 
 
 //pCity City_create(char* name, float lat, float lon){
-pCity City_create(char* name, int distFly){
+pCity City_create(char* name, float lat, float lon){
 	pCity tmpCity = _malloc(sizeof(City));
 	
 	tmpCity->name = _malloc(sizeof(char) * strlen(name));
@@ -10,9 +10,8 @@ pCity City_create(char* name, int distFly){
 	strcpy(tmpCity->name, name);
 	tmpCity->branch = NULL; // Ne pointe vers rien
 	
-	//tmpCity->lat = lat;
-	//tmpCity->lon = lon;
-	tmpCity->distFly = distFly;
+	tmpCity->lat = lat;
+	tmpCity->lon = lon;
 	
 	return tmpCity;
 }

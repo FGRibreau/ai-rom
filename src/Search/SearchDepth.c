@@ -1,5 +1,5 @@
 #include "SearchDepth.h"
-/*
+
 pFileData_city SearchDepth(pCity from, pCity to){
 	//Liste ouverte (route non trouvée)
 	pStack stackOpen = Stack_create();
@@ -7,7 +7,7 @@ pFileData_city SearchDepth(pCity from, pCity to){
 	//Meilleure route
 	pFileData_city bestRoad = NULL;
 	
-	//Stack_push(&stackOpen, FileData_city_create(NULL, from, 0, 0));
+	Stack_push(&stackOpen, FileData_city_create(NULL, from, 0, 0, 0));
 	
 	do {	
 		pFileData_city curCity = Stack_pop(&stackOpen);
@@ -41,4 +41,4 @@ pFileData_city SearchDepth(pCity from, pCity to){
 	//Release all "FileData_city_append"
 	
 	return bestRoad;
-}*/
+}

@@ -21,11 +21,7 @@ pFileData_city FileData_city_append(pFileData_city route, pBranch branch){
 }
 
 pFileData_city FileData_city_appendASC(pFileData_city route, pBranch branch, float heuristic){
-	//return FileData_city_create(route, branch->city, route->dist + branch->dist + dist, route->depth+1);
-	printf("%s => %d + %d = %d\n", route->city->name, route->dist, branch->city->distFly, route->dist + branch->city->distFly);
 	return FileData_city_create(route, branch->city, route->dist + branch->dist, heuristic, route->depth+1);
-	
-	//Il faut ajouter la distance de la route avant + la distance à vol d'oiseau
 }
 
 bool FileData_cityAlreadyExist(pFileData_city route, pCity city){
@@ -62,17 +58,16 @@ void FileData_printRoute(pFileData_city route){
 	} while (route = route->parent);
 	
 	
-	printf("(%dkm, %d étapes) %s\n", h->dist, h->depth, bstr2cstr(b, '\0'));
+	//, %d étapes, h->depth
+	printf("(%dkm) %s\n", h->dist, bstr2cstr(b, '\0'));
 	
 	bdestroy(b);
 	bdestroy(a);
 }
 
-//Ajoute un élément à la file (et trie la file du plus petit au plus grand
-//Ajout un élément dans la file
+//Ajoute un élément à la file (et la trie la file du plus petit au plus grand)
 void FileData_city_pushASC(pFile* file, pFileData_city data){
-	printf("Ajout dans la fil de %s\n", data->city->name);
-	
+
 	pFile node = _malloc (sizeof (File))
 		, cursor = *file;
 	
@@ -110,11 +105,11 @@ void FileData_city_pushASC(pFile* file, pFileData_city data){
 		
 	}
 	
-	FileData_city_list(*file);
-	
 	return;
 }
 
+
+//Pour le débug
 void FileData_city_list(pFile file){
 	pFile cursor = file;
 	
@@ -128,29 +123,3 @@ void FileData_city_list(pFile file){
 	
 	printf("\n-----------\n\n");
 }
-
-/*void FileData_city_pushASC(pFile* file, void* data){
-    if(file == NULL) {
-        file = malloc(sizeof(TNoeud));
-        f->debut->elem = e;
-        f->debut->nextElem = NULL;
-		File_push(file, <#void *data#>)
-    } else {
-        TNoeud* nPrec = NULL;
-        TNoeud* n = f->debut;
-        while(n != NULL && n->elem.coutChemin < e.coutChemin){
-            nPrec = n;
-            n = (TNoeud*)n->nextElem;
-        }
-        TNoeud* new = malloc(sizeof(TNoeud));
-        new->elem = e;
-		
-        if(nPrec!=NULL){
-            new->nextElem = nPrec->nextElem;
-            nPrec->nextElem = (pTNoeud)new;
-        } else {
-            new->nextElem = f->debut;
-            f->debut = (pTNoeud)new;
-        }
-    }
-}*/

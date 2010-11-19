@@ -1,9 +1,7 @@
 #include "SearchGreedy.h"
-/*
-pFileData_city SearchGreedy(pCity from, pCity to){
 
-	//pFileData_city road = FileData_city_create(NULL, from, 0, 0); // Pas forcement optimal
-	pFileData_city road = NULL;
+pFileData_city SearchGreedy(pCity from, pCity to){
+	pFileData_city road = FileData_city_create(NULL, from, 0, 0, 0); // Pas forcement optimal
 	pFileData_city curCity = road;
 	
 	do {	
@@ -30,4 +28,3 @@ pFileData_city SearchGreedy(pCity from, pCity to){
 
 	return road;
 }
-*/
