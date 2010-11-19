@@ -74,3 +74,28 @@ void* File_get(pFile* file){
 	return ret;
 }
 
+
+void* File_getASC(pFile* file){
+	pFile cursor = *file
+	, newFirstEl = NULL;
+	
+	void* ret = NULL;
+	
+	if(cursor->next != NULL){
+		newFirstEl = cursor->next;
+	}
+	
+	ret = cursor->data;
+	_free(cursor);
+	cursor = NULL;
+	
+	if(newFirstEl != NULL){
+		newFirstEl->prev = NULL;
+		*file = newFirstEl;
+	} else {
+		*file = NULL;
+	}
+	
+	return ret;
+}
+

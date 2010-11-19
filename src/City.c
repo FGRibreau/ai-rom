@@ -1,7 +1,8 @@
 #include "City.h"
 
 
-pCity City_create(char* name, float lat, float lon){
+//pCity City_create(char* name, float lat, float lon){
+pCity City_create(char* name, int distFly){
 	pCity tmpCity = _malloc(sizeof(City));
 	
 	tmpCity->name = _malloc(sizeof(char) * strlen(name));
@@ -9,8 +10,9 @@ pCity City_create(char* name, float lat, float lon){
 	strcpy(tmpCity->name, name);
 	tmpCity->branch = NULL; // Ne pointe vers rien
 	
-	tmpCity->lat = lat;
-	tmpCity->lon = lon;
+	//tmpCity->lat = lat;
+	//tmpCity->lon = lon;
+	tmpCity->distFly = distFly;
 	
 	return tmpCity;
 }

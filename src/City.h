@@ -19,6 +19,7 @@ struct City{
     char*		name;
 	float lat;				// Localisation en "x" sur le plan
 	float lon;				// Localisation en "y" sur le plan
+	int distFly;
 	pBranch branch; 
 /*
 	pCity		City_create();
@@ -39,7 +40,8 @@ struct City{
 
 
 /* Methodes City */
-pCity	City_create(char* name, float lat, float lon);
+//pCity	City_create(char* name, float lat, float lon);
+pCity	City_create(char* name, int distFly);
 void	City_destroy();
 bool	City_branchLink(pCity cityA, pCity cityB, unsigned int dist);
 bool	City_branchAdd(pCity city, pBranch branch);

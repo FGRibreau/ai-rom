@@ -1,5 +1,5 @@
 #include "SearchWidth.h"
-
+/*
 pFileData_city SearchWidth(pCity from, pCity to){
 	//Liste ouverte (route non trouvée)
 	pFile fileOpen = File_create();
@@ -7,7 +7,7 @@ pFileData_city SearchWidth(pCity from, pCity to){
 	//Meilleure route
 	pFileData_city bestRoad = NULL;
 	
-	File_push(&fileOpen, FileData_city_create(NULL, from, 0, 0));
+	//File_push(&fileOpen, FileData_city_create(NULL, from, 0, 0));
 	
 	do {	
 		pFileData_city curCity = File_get(&fileOpen);
@@ -38,3 +38,4 @@ pFileData_city SearchWidth(pCity from, pCity to){
 
 	return bestRoad;
 }
+*/

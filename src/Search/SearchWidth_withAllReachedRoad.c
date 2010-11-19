@@ -1,5 +1,5 @@
 #include "SearchWidth_withAllReachedRoad.h"
-
+/*
 void Search_defCon1(pCity from, pCity to){
 	//Liste ouverte (route non trouvée)
 	pFile fileOpen = File_create();
@@ -7,7 +7,7 @@ void Search_defCon1(pCity from, pCity to){
 	//Liste fermée (route trouvée, terminée)
 	pFile fileReached = File_create();
 	
-	File_push(&fileOpen, FileData_city_create(NULL, from, 0, 0));
+	//File_push(&fileOpen, FileData_city_create(NULL, from, 0, 0));
 	
 	do {	
 		pFileData_city curCity = File_get(&fileOpen);
@@ -52,4 +52,4 @@ void Search_showFileReached(pFile fileReached){
 	} while (fileReached = fileReached->next);
 	
 	
-}
+}*/
