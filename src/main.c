@@ -115,18 +115,18 @@ int main (int argc, const char * argv[]) {
 	printf("\nRecherche via Greedy:\n");
 	FileData_printRoute(SearchGreedy(Map_get("Arad"), Map_get("Bucarest")));
 	
-	printf("\nRecherche en AStar:\n");
+	printf("\nRecherche en AStar: (Affichage des routes arrivant à destination)\n");
 	FileData_printRoute(SearchAStar(Map_get("Arad"), Map_get("Bucarest")));
-	printf("\n");
+	printf("\t ---> Chemin retenu <---\n");
 
 	
 	//Search_defCon1(Map_get("Arad"), Map_get("Bucarest"));
 	
 	
-	Branch_free();		//Libères les branchs
+	//Branch_free();		//Libères les branchs
 	Map_free();			//Libères les villes
 	FileData_cityFree();//Libères les routes (trouvées par les algorithmes)
-	
+
 	//Affiche le résultat des mallocs/frees
 	_printMalloc();
 	

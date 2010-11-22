@@ -2,7 +2,7 @@
 #include "SearchAStar.h"
 
 pFileData_city SearchAStar(pCity from, pCity to){
-	
+	int compteur = 0; //TODO: Sert uniquement a afficher le nombre de résultat trouvé
 	//Liste ouverte (route non trouvée)
 	pFile fileOpen = File_create();
 	
@@ -22,8 +22,9 @@ pFileData_city SearchAStar(pCity from, pCity to){
 				pFileData_city d =  FileData_city_appendASC(curCity, cursor, City_distBtw(cursor->city, to));//
 				
 				if(cursor->city == to){
-					printf("%s Dist( %d ) + Heuristic( %f )\n", cursor->city->name, curCity->dist,  City_distBtw(cursor->city, to));
+					compteur++;
 					FileData_printRoute(d);//Affiche la route
+					printf("\t ---> Résultat No %d <---\n",compteur);
 				}
 				
 				FileData_city_pushASC(&fileOpen, d);
