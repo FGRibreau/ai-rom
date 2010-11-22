@@ -127,8 +127,6 @@ int main (int argc, const char * argv[]) {
 	Map_free();			//Libères les villes
 	FileData_cityFree();//Libères les routes (trouvées par les algorithmes)
 
-	//Affiche le résultat des mallocs/frees
-	_printMalloc();
 	
 	return 0;
 }
